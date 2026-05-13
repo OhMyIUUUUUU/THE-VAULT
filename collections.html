@@ -1,0 +1,366 @@
+<!-- Vault PH - Collections -->
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vault PH - Collections</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  <script src="./logic.js"></script>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md text-body-md antialiased flex flex-col min-h-screen"
+  >
+    <!-- TopNavBar (aligned with index / shop) -->
+    <nav
+      class="bg-surface text-primary font-headline-md text-headline-md font-label-caps text-label-caps border-b-2 border-primary flex justify-between items-center w-full px-grid-margin py-4 sticky top-0 z-50"
+    >
+      <div
+        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary"
+      >
+        VAULT PH
+      </div>
+      <div class="hidden md:flex gap-8">
+        <a
+          class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1"
+          href="index.html"
+          >HOME</a
+        >
+        <a
+          class="bg-primary text-on-primary transition-colors duration-100 px-2 py-1"
+          href="collections.html"
+          >SHOP</a
+        >
+        <a
+          class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1"
+          href="archive.html"
+          >THE VAULT</a
+        >
+      </div>
+      <div class="flex items-center gap-4">
+        <span
+          class="material-symbols-outlined text-primary cursor-pointer hover:bg-primary hover:text-on-primary p-1 transition-colors duration-100"
+          >search</span
+        >
+        <span
+          class="material-symbols-outlined text-primary cursor-pointer hover:bg-primary hover:text-on-primary p-1 transition-colors duration-100"
+          >person</span
+        >
+        <span
+          class="material-symbols-outlined text-primary cursor-pointer hover:bg-primary hover:text-on-primary p-1 transition-colors duration-100"
+          >shopping_cart</span
+        >
+      </div>
+    </nav>
+    <!-- Main Content Grid Container -->
+    <main
+      class="flex-grow max-w-[1440px] mx-auto w-full px-grid-margin py-stack-md flex flex-col md:flex-row gap-stack-md"
+    >
+      <!-- Sidebar Filters (Left Column) -->
+      <aside
+        class="w-full md:w-1/4 border-r-0 md:border-r-[2px] border-grid pr-0 md:pr-stack-sm flex flex-col gap-stack-md shrink-0"
+      >
+        <!-- Breadcrumbs -->
+        <nav
+          class="font-label-caps text-label-caps text-on-surface-variant flex gap-2 items-center uppercase border-b-[2px] border-grid pb-stack-xs"
+        >
+          <a class="hover:text-primary transition-colors" href="index.html">HOME</a>
+          <span>/</span>
+          <span class="text-primary font-bold">SHOP</span>
+        </nav>
+        <div
+          class="font-headline-md text-headline-md uppercase pb-stack-xs border-b-[2px] border-grid"
+        >
+          FILTERS
+        </div>
+        <!-- Categories Filter -->
+        <div
+          class="flex flex-col gap-stack-xs border-b-[2px] border-grid pb-stack-sm"
+        >
+          <h3
+            class="font-label-caps text-label-caps uppercase text-primary mb-2"
+          >
+            CATEGORY
+          </h3>
+          <label class="flex items-center gap-2 cursor-pointer group">
+            <input
+              class="filter-category form-checkbox h-5 w-5 text-primary border-2 border-primary rounded-none focus:ring-0 focus:ring-offset-0 checked:bg-primary"
+              data-category="outerwear"
+              type="checkbox"
+            />
+            <span
+              class="font-body-md text-body-md uppercase group-hover:underline"
+              >OUTERWEAR</span
+            >
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer group">
+            <input
+              class="filter-category form-checkbox h-5 w-5 text-primary border-2 border-primary rounded-none focus:ring-0 focus:ring-offset-0 checked:bg-primary"
+              data-category="tops"
+              type="checkbox"
+            />
+            <span
+              class="font-body-md text-body-md uppercase group-hover:underline"
+              >TOPS</span
+            >
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer group">
+            <input
+              class="filter-category form-checkbox h-5 w-5 text-primary border-2 border-primary rounded-none focus:ring-0 focus:ring-offset-0 checked:bg-primary"
+              data-category="bottoms"
+              type="checkbox"
+            />
+            <span
+              class="font-body-md text-body-md uppercase group-hover:underline"
+              >BOTTOMS</span
+            >
+          </label>
+          <label class="flex items-center gap-2 cursor-pointer group">
+            <input
+              class="filter-category form-checkbox h-5 w-5 text-primary border-2 border-primary rounded-none focus:ring-0 focus:ring-offset-0 checked:bg-primary"
+              data-category="accessories"
+              type="checkbox"
+            />
+            <span
+              class="font-body-md text-body-md uppercase group-hover:underline"
+              >ACCESSORIES</span
+            >
+          </label>
+        </div>
+        <!-- Size Filter -->
+        <div
+          class="flex flex-col gap-stack-xs border-b-[2px] border-grid pb-stack-sm"
+        >
+          <h3
+            class="font-label-caps text-label-caps uppercase text-primary mb-2"
+          >
+            SIZE
+          </h3>
+          <div class="grid grid-cols-3 gap-2">
+            <button
+              type="button"
+              class="filter-size border-[2px] border-grid py-1 font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors"
+              data-size="S"
+            >
+              S
+            </button>
+            <button
+              type="button"
+              class="filter-size border-[2px] border-grid py-1 font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors"
+              data-size="M"
+            >
+              M
+            </button>
+            <button
+              type="button"
+              class="filter-size border-[2px] border-grid py-1 font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors"
+              data-size="L"
+            >
+              L
+            </button>
+            <button
+              type="button"
+              class="filter-size border-[2px] border-grid py-1 font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors"
+              data-size="XL"
+            >
+              XL
+            </button>
+            <button
+              type="button"
+              class="filter-size border-[2px] border-grid py-1 font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors"
+              data-size="XXL"
+            >
+              XXL
+            </button>
+          </div>
+        </div>
+        <!-- Color Filter -->
+        <div
+          class="flex flex-col gap-stack-xs border-b-[2px] border-grid pb-stack-sm"
+        >
+          <h3
+            class="font-label-caps text-label-caps uppercase text-primary mb-2"
+          >
+            COLOR
+          </h3>
+          <div class="flex gap-2 flex-wrap">
+            <button
+              type="button"
+              aria-label="Black"
+              class="filter-color w-6 h-6 bg-black border-[1px] border-grid cursor-pointer p-0 ring-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              data-color="black"
+            ></button>
+            <button
+              type="button"
+              aria-label="White"
+              class="filter-color w-6 h-6 bg-white border-[1px] border-grid cursor-pointer p-0 ring-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              data-color="white"
+            ></button>
+            <button
+              type="button"
+              aria-label="Charcoal"
+              class="filter-color w-6 h-6 bg-[#4A4A4A] border-[1px] border-grid cursor-pointer p-0 ring-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              data-color="charcoal"
+            ></button>
+            <button
+              type="button"
+              aria-label="Burgundy"
+              class="filter-color w-6 h-6 bg-[#8B0000] border-[1px] border-grid cursor-pointer p-0 ring-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              data-color="burgundy"
+            ></button>
+            <button
+              type="button"
+              aria-label="Gold"
+              class="filter-color w-6 h-6 bg-tertiary-fixed-dim border-[1px] border-grid cursor-pointer p-0 ring-offset-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              data-color="gold"
+            ></button>
+          </div>
+        </div>
+      </aside>
+      <!-- Product Grid Area (Right Column) -->
+      <div class="w-full md:w-3/4 flex flex-col gap-stack-md">
+        <!-- Grid Header / Search -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-end gap-stack-sm border-b-[2px] border-grid pb-stack-xs"
+        >
+          <div class="relative w-full md:w-1/2">
+            <label class="sr-only" for="search">Search Products</label>
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+            >
+              <span class="material-symbols-outlined text-primary">search</span>
+            </div>
+            <input
+              class="w-full pl-10 pr-3 py-2 border-[2px] border-grid bg-surface font-label-caps text-label-caps uppercase focus:outline-none focus:border-tertiary-fixed-dim focus:ring-0 placeholder-on-surface-variant text-primary"
+              id="search"
+              placeholder="SEARCH COLLECTION..."
+              type="text"
+            />
+          </div>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-stack-sm w-full md:w-auto md:ml-auto">
+            <span
+              id="collections-result-count"
+              class="font-label-caps text-label-caps uppercase text-on-surface-variant whitespace-nowrap"
+              aria-live="polite"
+            ></span>
+            <div class="flex items-center gap-2">
+              <span
+                class="font-label-caps text-label-caps text-on-surface-variant uppercase"
+                >SORT BY:</span
+              >
+              <select
+                id="sort-by"
+                class="border-[2px] border-grid bg-surface font-label-caps text-label-caps uppercase py-2 pl-3 pr-8 focus:outline-none focus:border-tertiary-fixed-dim focus:ring-0 cursor-pointer"
+              >
+                <option value="newest">NEW ARRIVALS</option>
+                <option value="price-asc">PRICE: LOW TO HIGH</option>
+                <option value="price-desc">PRICE: HIGH TO LOW</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- Products Grid (filled by collections-page.js) -->
+        <div
+          id="product-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border-t-[2px] border-l-[2px] border-grid"
+        ></div>
+        <!-- Pagination / Load More -->
+        <div class="flex justify-center mt-stack-md">
+          <button
+            id="load-more-btn"
+            type="button"
+            class="border-[4px] border-primary bg-surface text-primary font-headline-md text-headline-md uppercase px-8 py-3 hover:bg-primary hover:text-on-primary transition-all duration-200 shadow-[4px_4px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] active:translate-y-1 active:translate-x-1 active:shadow-none"
+          >
+            LOAD MORE
+          </button>
+        </div>
+        <script src="./catalog-data.js" defer></script>
+        <script src="./collections-page.js" defer></script>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface text-primary font-label-caps text-label-caps font-body-md text-body-md border-t-4 border-primary grid grid-cols-1 md:grid-cols-12 gap-grid-gutter w-full px-grid-margin py-stack-lg mt-auto"
+    >
+      <div
+        class="md:col-span-4 flex flex-col gap-stack-sm pr-grid-margin border-b-2 md:border-b-0 md:border-r-2 border-primary pb-stack-md md:pb-0"
+      >
+        <div class="font-headline-md text-headline-md font-bold text-primary">
+          VAULT PH
+        </div>
+        <p
+          class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-2"
+        >
+          ARCHITECTURAL STREETWEAR REGISTRY. DEFINING THE INTERSECTION OF RAW
+          STRUCTURE AND CURATED LUXURY.
+        </p>
+      </div>
+      <div
+        class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-stack-md md:pl-grid-margin pt-stack-md md:pt-0"
+      >
+        <div class="flex flex-col gap-2">
+          <a
+            class="text-primary underline hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >COLLECTIONS</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+            href="archive.html"
+            >THE VAULT</a
+          >
+        </div>
+        <div class="flex flex-col gap-2">
+          <a
+            class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >SHIPPING</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >RETURNS</a
+          >
+        </div>
+        <div class="flex flex-col gap-2">
+          <a
+            class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >CONTACT</a
+          >
+          <a
+            class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >PRIVACY</a
+          >
+        </div>
+      </div>
+      <div
+        class="md:col-span-12 border-t-2 border-primary mt-stack-md pt-stack-sm text-center md:text-left"
+      >
+        <p
+          class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest"
+        >
+          © 2024 VAULT PH. ALL RIGHTS RESERVED. ARCHITECTURAL STREETWEAR
+          REGISTRY.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

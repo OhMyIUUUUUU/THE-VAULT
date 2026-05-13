@@ -1,0 +1,217 @@
+<!-- Vault PH - Product Detail -->
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vault PH - Product Detail</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Archivo+Narrow:wght@600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  <script src="./logic.js"></script>
+  </head>
+  <body
+    class="bg-background text-on-background antialiased font-body-md overflow-x-hidden selection:bg-tertiary-fixed-dim selection:text-primary min-h-screen flex flex-col"
+  >
+    <!-- TopNavBar Component -->
+    <nav
+      class="bg-surface text-primary border-b-[2px] border-primary sticky top-0 z-50 flex justify-between items-center w-full px-grid-margin py-4"
+    >
+      <div
+        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary"
+      >
+        VAULT PH
+      </div>
+      <div class="flex items-center gap-stack-sm">
+        <button
+          class="hover:bg-primary hover:text-on-primary transition-colors duration-100 p-2 flex items-center justify-center"
+        >
+          <span class="material-symbols-outlined">shopping_cart</span>
+        </button>
+        <button
+          class="hover:bg-primary hover:text-on-primary transition-colors duration-100 p-2 flex items-center justify-center"
+        >
+          <span class="material-symbols-outlined">person</span>
+        </button>
+      </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main
+      class="flex-grow max-w-[1440px] mx-auto w-full px-grid-margin py-stack-md flex flex-col gap-stack-lg"
+    >
+      <div
+        id="detail-not-found"
+        class="hidden border-[2px] border-primary bg-surface p-stack-lg text-center max-w-xl mx-auto w-full"
+      >
+        <p class="font-headline-md text-headline-md text-primary uppercase mb-stack-sm">
+          Piece not found
+        </p>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">
+          This registry entry is missing or the link is invalid.
+        </p>
+        <a
+          class="inline-block font-label-caps text-label-caps uppercase bg-primary text-on-primary px-6 py-3 border-[2px] border-primary hover:bg-tertiary-fixed-dim hover:text-primary transition-colors"
+          href="collections.html"
+          >Return to collections</a
+        >
+      </div>
+      <div id="detail-loaded" class="flex flex-col gap-stack-lg">
+      <!-- Product Detail Section - Split Screen -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter border-[2px] border-primary bg-surface"
+      >
+        <!-- Left: Imagery -->
+        <div
+          class="relative w-full aspect-[3/4] md:aspect-auto md:h-[800px] border-r-0 md:border-r-[2px] border-b-[2px] md:border-b-0 border-primary bg-surface-container"
+        >
+          <img
+            id="detail-hero-img"
+            alt=""
+            class="w-full h-full object-cover"
+            src=""
+            referrerpolicy="no-referrer"
+            decoding="async"
+          />
+          <div
+            id="detail-badge"
+            class="absolute top-4 left-4 px-3 py-1 font-label-caps text-label-caps border-[1px] border-primary shadow-[2px_2px_0px_#000000] hidden"
+          ></div>
+        </div>
+        <!-- Right: Product Details -->
+        <div class="flex flex-col p-stack-md justify-between bg-surface">
+          <div class="flex flex-col gap-stack-md">
+            <!-- Title & Price -->
+            <div
+              class="flex flex-col gap-stack-xs border-b-[2px] border-primary pb-stack-sm"
+            >
+              <h1
+                id="detail-title"
+                class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase"
+              ></h1>
+              <p
+                id="detail-price"
+                class="font-headline-md text-headline-md text-tertiary-fixed-dim mt-stack-xs"
+              ></p>
+            </div>
+            <!-- Description -->
+            <div
+              id="detail-description"
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-prose"
+            ></div>
+            <!-- Selectors -->
+            <div
+              class="flex flex-col gap-stack-sm pt-stack-sm border-t-[1px] border-outline-variant"
+            >
+              <!-- Color -->
+              <div class="flex flex-col gap-2">
+                <span class="font-label-caps text-label-caps text-primary"
+                  >COLORWAY</span
+                >
+                <div id="detail-color-buttons" class="flex gap-2 flex-wrap"></div>
+              </div>
+              <!-- Size -->
+              <div class="flex flex-col gap-2 mt-stack-sm">
+                <span class="font-label-caps text-label-caps text-primary"
+                  >SCALE / SIZE</span
+                >
+                <div
+                  id="detail-size-buttons"
+                  class="grid gap-2"
+                  style="grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr))"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <!-- Actions -->
+          <div class="mt-stack-lg sticky bottom-4">
+            <button
+              id="detail-checkout-btn"
+              type="button"
+              class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-4 border-[2px] border-primary hover:bg-tertiary-fixed-dim hover:text-primary hover:shadow-[4px_4px_0px_#000000] transition-all duration-200 flex justify-center items-center gap-2"
+            >
+              <span>ADD TO CART</span>
+              <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Recommended Section (Brutalist Grid) -->
+      <section
+        class="flex flex-col gap-stack-sm pt-stack-lg border-t-[4px] border-primary"
+      >
+        <h2 class="font-headline-md text-headline-md text-primary uppercase">
+          SYSTEM ARCHIVES / RELATED
+        </h2>
+        <div
+          id="detail-related-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-[2px] border-primary bg-primary gap-[1px]"
+        ></div>
+      </section>
+      </div>
+    </main>
+    <!-- Footer Component -->
+    <footer
+      class="bg-surface text-primary border-t-4 border-primary grid grid-cols-1 md:grid-cols-12 gap-grid-gutter w-full px-grid-margin py-stack-lg mt-auto"
+    >
+      <div class="md:col-span-12 flex flex-col gap-stack-md">
+        <div class="font-headline-md text-headline-md font-bold text-primary">
+          VAULT PH
+        </div>
+        <div class="flex flex-wrap gap-x-stack-md gap-y-stack-sm">
+          <a
+            class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-fixed-dim transition-colors"
+            href="collections.html"
+            >COLLECTIONS</a
+          >
+          <a
+            class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-fixed-dim transition-colors"
+            href="checkout.html"
+            >THE VAULT</a
+          >
+          <a
+            class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >SHIPPING</a
+          >
+          <a
+            class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >RETURNS</a
+          >
+          <a
+            class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >CONTACT</a
+          >
+          <a
+            class="text-on-surface-variant font-label-caps text-label-caps hover:text-tertiary-fixed-dim transition-colors"
+            href="#"
+            >PRIVACY</a
+          >
+        </div>
+        <div
+          class="font-label-caps text-label-caps font-body-md text-body-md text-on-surface-variant border-t-[1px] border-outline-variant pt-stack-sm mt-stack-sm"
+        >
+          © 2024 VAULT PH. ALL RIGHTS RESERVED. ARCHITECTURAL STREETWEAR
+          REGISTRY.
+        </div>
+      </div>
+    </footer>
+    <script src="./catalog-data.js" defer></script>
+    <script src="./product-detail-page.js" defer></script>
+  </body>
+</html>
