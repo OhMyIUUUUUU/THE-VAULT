@@ -78,9 +78,14 @@
             data-alt="A gritty, urban streetwear fashion photography shot. A model stands against a brutalist concrete wall, wearing oversized, structured dark clothing. High contrast black and white processing with heavy grain. Sharp angles, dramatic lighting, conveying a raw, architectural streetwear aesthetic in a minimalist setting."
           ></div>
           <h1
-            class="font-display-xxl text-primary uppercase relative z-10 mb-stack-md text-[clamp(2.25rem,0.5rem+7vw,7.5rem)] leading-[0.92] tracking-tight text-balance"
+            class="font-display-xxl text-primary uppercase relative z-10 mb-stack-md text-[clamp(2.25rem,0.5rem+7vw,7.5rem)] leading-[0.92] tracking-tight text-balance min-h-[2.6em]"
+            aria-label="FASHION STREETWEAR"
           >
-            FASHION<br />STREETWEAR
+            <span id="hero-type-line1" class="block whitespace-nowrap"></span>
+            <span class="block whitespace-nowrap"
+              ><span id="hero-type-line2"></span
+              ><span class="hero-type-cursor" aria-hidden="true"></span
+            ></span>
           </h1>
           <p
             class="font-body-lg text-body-lg text-on-surface-variant max-w-md relative z-10 mb-stack-lg"
@@ -102,11 +107,11 @@
           </div>
         </div>
         <div
-          class="md:col-span-5 h-[600px] md:h-auto border-t-2 md:border-t-0 border-primary bg-surface relative"
+          class="md:col-span-5 h-[600px] md:h-auto border-t-2 md:border-t-0 border-primary bg-surface relative overflow-hidden"
         >
           <img
             alt="Hero Fashion Shot"
-            class="w-full h-full object-cover mix-blend-luminosity"
+            class="hero-editorial-zoom w-full h-full object-cover mix-blend-luminosity"
             data-alt="A striking studio fashion editorial shot. A single figure wearing a highly structured, avant-garde black jacket and wide-leg trousers. The background is stark white. The lighting is harsh and high-key, creating solid black cast shadows. The composition is entirely asymmetrical, emphasizing the sharp angles of the garment."
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA68KJ1Zt1gUtTApcwVTlUUww8hcpz3vUM1MX2zgMeF_tvu2g30oXIQAbhEC_JAh4duCMCzfkd4Ab_agHk5NxMuhUjKuyE7_7CUtH7i5IQcTFXmpwByD4rtKsMeapypLPXnRLDcgFFpCiBFYzbmKBsUmqkO91lU4nPASnE0CMbfdroQjlY7PTALio1lsVks5Mah6pjwtkbqjDv2d4VoGteoIjRY4Wp-pZL79TOK_V9TpXLzLx_mm5vnM_R6BhEUN3vpshk_cyB4WQo"
           />
@@ -151,7 +156,9 @@
               class="bg-tertiary-fixed-dim text-primary font-label-caps text-label-caps px-3 py-1 inline-block w-max brutal-border"
               >CORE COLLECTION</span
             >
-            <h2 class="font-headline-lg text-headline-lg text-primary">
+            <h2
+              class="font-headline-lg text-headline-lg text-tertiary-fixed-dim drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
+            >
               THE<br />ESSENTIALS
             </h2>
           </div>
@@ -461,5 +468,6 @@
         </div>
       </div>
     </footer>
+    <script src="./index-hero-typewriter.js" defer></script>
   </body>
 </html>

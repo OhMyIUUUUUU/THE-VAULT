@@ -106,3 +106,60 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+/* Home hero — typewriter caret */
+.hero-type-cursor {
+  display: inline-block;
+  vertical-align: -0.08em;
+  margin-left: 0.04em;
+  width: 0.055em;
+  min-width: 3px;
+  height: 0.82em;
+  background: currentColor;
+  animation: hero-cursor-blink 0.95s step-end infinite;
+}
+
+.hero-type-cursor.is-done {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+@keyframes hero-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Home hero — editorial: zoom into head–chest, then settle */
+@keyframes hero-editorial-zoom-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  48% {
+    transform: scale(1.48);
+  }
+
+  62% {
+    transform: scale(1.48);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-editorial-zoom {
+  /* Anchor on upper torso / collar so zoom reads as head → chest, not legs */
+  transform-origin: 50% 24%;
+  will-change: transform;
+  animation: hero-editorial-zoom-pulse 2.8s cubic-bezier(0.42, 0, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-editorial-zoom {
+    animation: none;
+    will-change: auto;
+  }
+}
