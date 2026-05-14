@@ -26,470 +26,253 @@
     class="font-body-md text-body-md antialiased overflow-x-hidden min-h-screen flex flex-col"
   >
     <!-- Minimalist Checkout Header (Distraction Free) -->
-    <header
-      class="w-full border-b-[2px] border-primary bg-surface z-40 relative"
+    <nav
+      class="bg-surface text-primary font-headline-md text-headline-md font-label-caps text-label-caps docked full-width top-0 border-b-2 border-primary flat no shadows flex justify-between items-center w-full px-grid-margin py-4 sticky top-0 z-50"
     >
-      <div
-        class="max-w-[1440px] mx-auto px-grid-margin py-4 flex justify-between items-center"
-      >
-        <a
-          class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90"
-          href="./home.html"
-          >VAULT PH</a>
-        <div
-          class="font-label-caps text-label-caps text-on-surface-variant flex flex-wrap items-center justify-end gap-x-2 sm:gap-x-3 gap-y-1"
-        >
-          <a
-            href="profile.html"
-            class="hidden sm:inline-flex font-label-caps text-label-caps uppercase text-primary underline decoration-1 underline-offset-2 hover:text-tertiary-fixed-dim min-h-[44px] items-center"
-            >Profile</a
-          >
-          <a
-          href="profile.html"
-          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] text-primary hover:bg-primary hover:text-on-primary transition-colors no-underline"
-          aria-label="Profile"
-          >
-            <span class="material-symbols-outlined">person</span>
+      <div class="flex-1 flex justify-start">
+        <a href="./home.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90">VAULT PH</a>
+      </div>
+      
+      <div class="hidden md:flex gap-8 justify-center items-center">
+        <a class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1" href="home.html">HOME</a>
+        <a class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1" href="collections.html">SHOP</a>
+        <a class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1" href="archive.html">THE VAULT</a>
+        <a href="profile.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center">PROFILE</a>
+        <a href="checkout.html" class="bg-primary text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center gap-2">CART
+          <span class="vault-stack-badge hidden min-w-[1.25rem] h-[1.25rem] px-0.5 flex items-center justify-center bg-surface text-primary font-label-caps text-xs leading-none border border-surface" aria-hidden="true">0</span>
+        </a>
+      </div>
+
+      <div class="flex-1 flex justify-end items-center gap-4">
+        <span class="hidden lg:inline-flex items-center gap-1 uppercase tracking-wide text-primary font-label-caps text-label-caps ml-4">
+          <span class="material-symbols-outlined text-[20px]">lock</span> SECURE CHECKOUT
+        </span>
+        <div class="flex md:hidden items-center gap-4">
+          <a href="profile.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center">PROFILE</a>
+          <a href="checkout.html" class="bg-primary text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center gap-2">CART
+            <span class="vault-stack-badge hidden min-w-[1.25rem] h-[1.25rem] px-0.5 flex items-center justify-center bg-surface text-primary font-label-caps text-xs leading-none border border-surface" aria-hidden="true">0</span>
           </a>
-          <a
-            href="checkout.html"
-            class="relative inline-flex items-center justify-center text-primary hover:text-tertiary-fixed-dim transition-colors min-h-[44px] min-w-[44px]"
-            aria-label="Checkout"
-          >
-            <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
-            <span
-              class="vault-stack-badge hidden absolute top-0.5 right-0.5 min-w-[1.125rem] h-[1.125rem] px-0.5 flex items-center justify-center bg-primary text-on-primary text-[10px] leading-none border border-primary font-label-caps"
-              aria-hidden="true"
-              >0</span
-            >
-          </a>
-          <span class="hidden sm:inline text-on-surface-variant">|</span>
-          <span class="inline-flex items-center gap-1 uppercase tracking-wide">
-            <span class="material-symbols-outlined text-[20px]">lock</span> SECURE
-            CHECKOUT
-          </span>
         </div>
       </div>
-    </header>
+    </nav>
     <!-- Main Content -->
-    <main
-      class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-grid-margin py-8 md:py-12 flex flex-col"
-    >
-      <a
-        href="collections.html#stack-drawer"
-        class="group self-start inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary border-[2px] border-primary bg-surface px-3 py-2.5 min-h-[44px] hover:bg-primary hover:text-on-primary transition-colors duration-100 no-underline mb-6 md:mb-8"
-        aria-label="Back to shop and pull stack"
-      >
-        <span
-          class="material-symbols-outlined text-[1.35rem] leading-none"
-          aria-hidden="true"
-          >arrow_back</span
-        >
+        <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-grid-margin py-8 md:py-12 flex flex-col">
+      <a href="collections.html#stack-drawer" class="group self-start inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary border-[2px] border-primary bg-surface px-3 py-2.5 min-h-[44px] hover:bg-primary hover:text-on-primary hover:shadow-[4px_4px_0px_#000000] transition-all duration-200 no-underline mb-8">
+        <span class="material-symbols-outlined text-[1.35rem] leading-none" aria-hidden="true">arrow_back</span>
         <span class="uppercase">Back to shop</span>
       </a>
-      <div
-        class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-grid-gutter lg:border-[2px] lg:border-primary lg:bg-surface"
-      >
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-grid-gutter items-start">
+        
         <!-- Column 1: Multi-step Form -->
-        <div
-          class="lg:col-span-7 lg:border-r-[2px] lg:border-primary p-0 lg:p-8 flex flex-col gap-8"
-        >
+        <div class="lg:col-span-7 flex flex-col gap-10">
+          
           <!-- Contact Info -->
-          <section
-            class="border-[2px] border-primary bg-surface p-6 neo-shadow relative"
-          >
-            <div
-              class="absolute -top-3 left-4 bg-surface px-2 border-[2px] border-primary font-label-caps text-label-caps uppercase"
-            >
+          <section class="border-[2px] border-primary bg-surface p-8 shadow-[6px_6px_0px_#000000] relative">
+            <div class="absolute -top-4 left-6 bg-surface px-3 py-1 border-[2px] border-primary font-headline-md text-xl uppercase font-bold tracking-tight">
               1. Contact
             </div>
-            <div class="flex flex-col gap-4 mt-2">
+            <div class="flex flex-col gap-5 mt-4">
               <div class="flex justify-between items-end mb-2">
                 <span class="font-body-md text-body-md font-bold">Account</span>
-                <a
-                  class="font-label-caps text-label-caps underline"
-                  href="sign-in.html"
-                  >Log in</a
-                >
+                <a class="font-label-caps text-label-caps underline hover:text-tertiary-fixed-dim transition-colors" href="sign-in.html">Log in</a>
               </div>
               <div class="relative w-full">
-                <label class="font-label-caps text-label-caps block mb-1"
-                  >Email or Mobile Phone Number</label
-                >
-                <input
-                  id="checkout-contact-email"
-                  class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px] transition-all"
-                  placeholder="Enter contact info"
-                  type="text"
-                />
+                <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">Email or Mobile Phone Number</label>
+                <input id="checkout-contact-email" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:border-primary focus:shadow-[4px_4px_0px_#000000] focus:bg-surface transition-all" placeholder="Enter contact info" type="text" />
               </div>
-              <div class="flex items-center gap-2 mt-2">
-                <input
-                  class="w-5 h-5 border-[2px] border-primary rounded-none bg-surface-container-lowest checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0"
-                  id="news"
-                  type="checkbox"
-                />
-                <label
-                  class="font-body-md text-body-md cursor-pointer"
-                  for="news"
-                  >Email me with news and offers</label
-                >
+              <div class="flex items-center gap-3 mt-2">
+                <input class="w-6 h-6 border-[2px] border-primary rounded-none bg-surface-container-lowest checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 cursor-pointer" id="news" type="checkbox" />
+                <label class="font-body-md text-body-md cursor-pointer select-none" for="news">Email me with news and offers</label>
               </div>
             </div>
           </section>
+
           <!-- Shipping Details -->
-          <section class="border-[2px] border-primary bg-surface p-6 relative">
-            <div
-              class="absolute -top-3 left-4 bg-surface px-2 border-[2px] border-primary font-label-caps text-label-caps uppercase"
-            >
+          <section class="border-[2px] border-primary bg-surface p-8 shadow-[6px_6px_0px_#000000] relative">
+            <div class="absolute -top-4 left-6 bg-surface px-3 py-1 border-[2px] border-primary font-headline-md text-xl uppercase font-bold tracking-tight">
               2. Delivery
             </div>
-            <div class="flex flex-col gap-4 mt-2">
+            <div class="flex flex-col gap-5 mt-4">
               <div class="relative w-full">
-                <label class="font-label-caps text-label-caps block mb-1"
-                  >Country/Region</label
-                >
-                <select
-                  id="checkout-shipping-country"
-                  class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px] appearance-none rounded-none"
-                >
+                <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">Country/Region</label>
+                <select id="checkout-shipping-country" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] focus:bg-surface appearance-none rounded-none transition-all cursor-pointer">
                   <option value="PH">Philippines</option>
                   <option value="US">United States</option>
                   <option value="SG">Singapore</option>
                   <option value="JP">Japan</option>
                 </select>
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div class="relative w-full">
-                  <label class="font-label-caps text-label-caps block mb-1"
-                    >First Name</label
-                  >
-                  <input
-                    id="checkout-shipping-first"
-                    class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
-                    placeholder="First Name"
-                    type="text"
-                  />
+                  <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">First Name</label>
+                  <input id="checkout-shipping-first" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] focus:bg-surface transition-all" placeholder="First Name" type="text" />
                 </div>
                 <div class="relative w-full">
-                  <label class="font-label-caps text-label-caps block mb-1"
-                    >Last Name</label
-                  >
-                  <input
-                    id="checkout-shipping-last"
-                    class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
-                    placeholder="Last Name"
-                    type="text"
-                  />
+                  <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">Last Name</label>
+                  <input id="checkout-shipping-last" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] focus:bg-surface transition-all" placeholder="Last Name" type="text" />
                 </div>
               </div>
               <div class="relative w-full">
-                <label class="font-label-caps text-label-caps block mb-1"
-                  >Address</label
-                >
-                <input
-                  id="checkout-shipping-address1"
-                  class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
-                  placeholder="Street address, building, etc."
-                  type="text"
-                />
+                <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">Address</label>
+                <input id="checkout-shipping-address1" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] focus:bg-surface transition-all" placeholder="Street address, building, etc." type="text" />
               </div>
               <div class="relative w-full">
-                <label class="font-label-caps text-label-caps block mb-1"
-                  >Apartment, suite, etc. (optional)</label
-                >
-                <input
-                  id="checkout-shipping-address2"
-                  class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
-                  type="text"
-                />
+                <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">Apartment, suite, etc. (optional)</label>
+                <input id="checkout-shipping-address2" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] focus:bg-surface transition-all" type="text" />
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div class="relative w-full md:col-span-1">
-                  <label class="font-label-caps text-label-caps block mb-1"
-                    >City</label
-                  >
-                  <input
-                    id="checkout-shipping-city"
-                    class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
-                    placeholder="City"
-                    type="text"
-                  />
+                  <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">City</label>
+                  <input id="checkout-shipping-city" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] focus:bg-surface transition-all" placeholder="City" type="text" />
                 </div>
                 <div class="relative w-full md:col-span-1">
-                  <label class="font-label-caps text-label-caps block mb-1"
-                    >Region/Province</label
-                  >
-                  <select
-                    id="checkout-shipping-region"
-                    class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px] appearance-none rounded-none"
-                  >
+                  <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">Region</label>
+                  <select id="checkout-shipping-region" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] focus:bg-surface appearance-none rounded-none transition-all cursor-pointer">
                     <option value="Metro Manila">Metro Manila</option>
                     <option value="Cebu">Cebu</option>
                     <option value="Davao">Davao</option>
                   </select>
                 </div>
                 <div class="relative w-full md:col-span-1">
-                  <label class="font-label-caps text-label-caps block mb-1"
-                    >Postal Code</label
-                  >
-                  <input
-                    id="checkout-shipping-postal"
-                    class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
-                    placeholder="ZIP"
-                    type="text"
-                  />
+                  <label class="font-label-caps text-label-caps block mb-2 font-bold tracking-wide">Postal Code</label>
+                  <input id="checkout-shipping-postal" class="w-full border-[2px] border-primary bg-surface-container-lowest p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] focus:bg-surface transition-all" placeholder="ZIP" type="text" />
                 </div>
               </div>
             </div>
           </section>
+
           <!-- Payment Methods -->
-          <section class="border-[2px] border-primary bg-surface p-6 relative">
-            <div
-              class="absolute -top-3 left-4 bg-surface px-2 border-[2px] border-primary font-label-caps text-label-caps uppercase"
-            >
+          <section class="border-[2px] border-primary bg-surface p-8 shadow-[6px_6px_0px_#000000] relative">
+            <div class="absolute -top-4 left-6 bg-surface px-3 py-1 border-[2px] border-primary font-headline-md text-xl uppercase font-bold tracking-tight">
               3. Payment
             </div>
-            <p
-              class="font-body-md text-body-md text-on-surface-variant mt-2 mb-4"
-            >
+            <p class="font-body-md text-body-md text-on-surface-variant mt-4 mb-6">
               All transactions are secure and encrypted.
             </p>
-            <div
-              class="flex flex-col border-[2px] border-primary bg-[#FAF9F9]"
-            >
+            <div class="flex flex-col gap-4">
               <!-- GCash -->
-              <label
-                class="flex items-center justify-between p-4 border-b-[2px] border-primary cursor-pointer hover:bg-surface-container-low transition-colors group"
-              >
-                <div class="flex items-center gap-3">
-                  <input
-                    checked=""
-                    class="w-5 h-5 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-primary"
-                    name="payment"
-                    type="radio"
-                  />
-                  <span
-                    class="font-label-caps text-label-caps uppercase font-bold group-hover:text-tertiary-fixed-dim transition-colors"
-                    >GCash</span
-                  >
+              <label class="flex items-center justify-between p-5 border-[2px] border-primary cursor-pointer hover:shadow-[4px_4px_0px_#000000] transition-all duration-200 group bg-surface-container-lowest has-[:checked]:bg-primary has-[:checked]:text-on-primary">
+                <div class="flex items-center gap-4">
+                  <input checked class="w-6 h-6 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-surface checked:border-surface cursor-pointer" name="payment" type="radio" />
+                  <span class="font-label-caps text-label-caps uppercase font-bold text-lg">GCash</span>
                 </div>
-                <div
-                  class="flex h-9 min-w-[4.5rem] max-w-[6.5rem] shrink-0 items-center justify-center border-[1px] border-primary bg-white px-2"
-                >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/52/GCash_logo.svg"
-                    alt="GCash"
-                    class="max-h-7 w-full max-w-full object-contain object-center"
-                    width="120"
-                    height="32"
-                    loading="lazy"
-                    decoding="async"
-                    referrerpolicy="no-referrer"
-                  />
+                <div class="flex h-10 min-w-[5rem] items-center justify-center border-[2px] border-primary bg-white px-2 group-has-[:checked]:border-surface">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/GCash_logo.svg" alt="GCash" class="h-6 object-contain" />
                 </div>
               </label>
+
               <!-- Maya -->
-              <label
-                class="flex items-center justify-between p-4 border-b-[2px] border-primary cursor-pointer hover:bg-surface-container-low transition-colors group"
-              >
-                <div class="flex items-center gap-3">
-                  <input
-                    class="w-5 h-5 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-primary"
-                    name="payment"
-                    type="radio"
-                  />
-                  <span
-                    class="font-label-caps text-label-caps uppercase font-bold group-hover:text-tertiary-fixed-dim transition-colors"
-                    >Maya</span
-                  >
+              <label class="flex items-center justify-between p-5 border-[2px] border-primary cursor-pointer hover:shadow-[4px_4px_0px_#000000] transition-all duration-200 group bg-surface-container-lowest has-[:checked]:bg-primary has-[:checked]:text-on-primary">
+                <div class="flex items-center gap-4">
+                  <input class="w-6 h-6 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-surface checked:border-surface cursor-pointer" name="payment" type="radio" />
+                  <span class="font-label-caps text-label-caps uppercase font-bold text-lg">Maya</span>
                 </div>
-                <div
-                  class="flex h-9 min-w-[4.5rem] max-w-[6.5rem] shrink-0 items-center justify-center border-[1px] border-primary bg-white px-2"
-                >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Maya_logo.svg"
-                    alt="Maya"
-                    class="max-h-6 w-full max-w-full object-contain object-center"
-                    width="148"
-                    height="43"
-                    loading="lazy"
-                    decoding="async"
-                    referrerpolicy="no-referrer"
-                  />
+                <div class="flex h-10 min-w-[5rem] items-center justify-center border-[2px] border-primary bg-white px-2 group-has-[:checked]:border-surface">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Maya_logo.svg" alt="Maya" class="h-5 object-contain" />
                 </div>
               </label>
+
               <!-- GrabPay -->
-              <label
-                class="flex items-center justify-between p-4 border-b-[2px] border-primary cursor-pointer hover:bg-surface-container-low transition-colors group"
-              >
-                <div class="flex items-center gap-3">
-                  <input
-                    class="w-5 h-5 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-primary"
-                    name="payment"
-                    type="radio"
-                  />
-                  <span
-                    class="font-label-caps text-label-caps uppercase font-bold group-hover:text-tertiary-fixed-dim transition-colors"
-                    >GrabPay</span
-                  >
+              <label class="flex items-center justify-between p-5 border-[2px] border-primary cursor-pointer hover:shadow-[4px_4px_0px_#000000] transition-all duration-200 group bg-surface-container-lowest has-[:checked]:bg-primary has-[:checked]:text-on-primary">
+                <div class="flex items-center gap-4">
+                  <input class="w-6 h-6 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-surface checked:border-surface cursor-pointer" name="payment" type="radio" />
+                  <span class="font-label-caps text-label-caps uppercase font-bold text-lg">GrabPay</span>
                 </div>
-                <div
-                  class="flex h-9 min-w-[4.5rem] max-w-[6.5rem] shrink-0 items-center justify-center border-[1px] border-primary bg-white px-2"
-                >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Grab_Logo.svg"
-                    alt="GrabPay"
-                    class="max-h-7 w-full max-w-full object-contain object-center"
-                    width="120"
-                    height="36"
-                    loading="lazy"
-                    decoding="async"
-                    referrerpolicy="no-referrer"
-                  />
+                <div class="flex h-10 min-w-[5rem] items-center justify-center border-[2px] border-primary bg-white px-2 group-has-[:checked]:border-surface">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Grab_Logo.svg" alt="GrabPay" class="h-6 object-contain" />
                 </div>
               </label>
+
               <!-- Online Banking -->
-              <label
-                class="flex items-center justify-between p-4 border-b-[2px] border-primary cursor-pointer hover:bg-surface-container-low transition-colors group"
-              >
-                <div class="flex items-center gap-3">
-                  <input
-                    class="w-5 h-5 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-primary"
-                    name="payment"
-                    type="radio"
-                  />
-                  <span
-                    class="font-label-caps text-label-caps uppercase font-bold group-hover:text-tertiary-fixed-dim transition-colors"
-                    >Online Banking (BPI/UBP)</span
-                  >
+              <label class="flex items-center justify-between p-5 border-[2px] border-primary cursor-pointer hover:shadow-[4px_4px_0px_#000000] transition-all duration-200 group bg-surface-container-lowest has-[:checked]:bg-primary has-[:checked]:text-on-primary">
+                <div class="flex items-center gap-4">
+                  <input class="w-6 h-6 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-surface checked:border-surface cursor-pointer" name="payment" type="radio" />
+                  <span class="font-label-caps text-label-caps uppercase font-bold text-lg">Online Banking</span>
                 </div>
-                <span class="material-symbols-outlined text-[24px]"
-                  >account_balance</span
-                >
+                <span class="material-symbols-outlined text-[32px]">account_balance</span>
               </label>
+
               <!-- COD -->
-              <label
-                class="flex items-center justify-between p-4 cursor-pointer hover:bg-surface-container-low transition-colors group"
-              >
-                <div class="flex items-center gap-3">
-                  <input
-                    class="w-5 h-5 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-primary"
-                    name="payment"
-                    type="radio"
-                  />
-                  <span
-                    class="font-label-caps text-label-caps uppercase font-bold group-hover:text-tertiary-fixed-dim transition-colors"
-                    >Cash on Delivery (COD)</span
-                  >
+              <label class="flex items-center justify-between p-5 border-[2px] border-primary cursor-pointer hover:shadow-[4px_4px_0px_#000000] transition-all duration-200 group bg-surface-container-lowest has-[:checked]:bg-primary has-[:checked]:text-on-primary">
+                <div class="flex items-center gap-4">
+                  <input class="w-6 h-6 border-[2px] border-primary rounded-full text-primary focus:ring-0 checked:bg-surface checked:border-surface cursor-pointer" name="payment" type="radio" />
+                  <span class="font-label-caps text-label-caps uppercase font-bold text-lg">Cash on Delivery</span>
                 </div>
-                <span class="material-symbols-outlined text-[24px]"
-                  >payments</span
-                >
+                <span class="material-symbols-outlined text-[32px]">payments</span>
               </label>
             </div>
           </section>
+
           <!-- Action Mobile -->
           <div class="block lg:hidden mt-4">
-            <button
-              type="button"
-              class="js-checkout-place-order w-full bg-primary text-on-primary py-4 px-6 font-label-caps text-label-caps uppercase neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all border-[2px] border-primary flex justify-center items-center gap-2"
-            >
+            <button type="button" class="js-checkout-place-order w-full bg-primary text-on-primary py-5 px-6 font-headline-md text-2xl uppercase border-[2px] border-primary shadow-[6px_6px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_#000000] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all flex justify-center items-center gap-3">
               PLACE ORDER
-              <span class="material-symbols-outlined text-[18px]"
-                >arrow_forward</span
-              >
+              <span class="material-symbols-outlined text-[28px]">arrow_forward</span>
             </button>
           </div>
         </div>
+
         <!-- Column 2: Order Summary -->
-        <div
-          class="lg:col-span-5 bg-surface-container-low p-0 lg:p-8 flex flex-col gap-6 min-h-0"
-        >
-          <h2
-            class="font-headline-md text-headline-md font-bold hidden lg:block"
-          >
-            ORDER SUMMARY
-          </h2>
-          <!-- Cart items from pull stack (checkout-order.js); scrolls when ~4+ rows -->
-          <div
-            class="border-b-[2px] border-primary pb-6 min-h-0 shrink-0"
-            role="region"
-            aria-label="Items in your order"
-          >
-            <div
-              id="checkout-order-items"
-              class="flex flex-col gap-4 overflow-y-auto overscroll-y-contain max-h-[min(22.5rem,50vh)] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-              aria-live="polite"
-            ></div>
-          </div>
-          <!-- Discount Code -->
-          <div class="flex gap-2">
-            <input
-              class="flex-grow border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
-              placeholder="Discount code or gift card"
-              type="text"
-            />
-            <button
-              class="bg-surface text-primary border-[2px] border-primary px-4 font-label-caps text-label-caps uppercase hover:bg-primary hover:text-on-primary transition-colors"
-            >
-              Apply
-            </button>
-          </div>
-          <!-- Totals -->
-          <div
-            class="flex flex-col gap-2 font-body-md text-body-md pt-4 border-t-[2px] border-primary"
-          >
-            <div class="flex justify-between">
-              <span class="text-on-surface-variant">Subtotal</span>
-              <span id="checkout-summary-subtotal" class="font-bold tabular-nums"
-                >₱ 0</span
-              >
+        <div class="lg:col-span-5 relative">
+          <div class="sticky top-28 bg-surface-container-lowest border-[2px] border-primary p-6 md:p-8 flex flex-col gap-6 shadow-[6px_6px_0px_#000000]">
+            
+            <div class="flex items-center justify-between border-b-[4px] border-primary pb-4">
+              <h2 class="font-headline-md text-3xl font-bold tracking-tight uppercase">
+                Order Summary
+              </h2>
+              <span class="material-symbols-outlined text-[28px]">receipt_long</span>
             </div>
-            <div class="flex justify-between">
-              <span class="text-on-surface-variant">Shipping</span>
-              <span
-                class="font-bold uppercase text-xs self-center border-[1px] border-primary px-1 bg-tertiary-fixed-dim text-primary"
-                >Calculated at next step</span
-              >
+
+            <!-- Cart items from pull stack (checkout-order.js) -->
+            <div class="border-b-[2px] border-dashed border-primary pb-6 min-h-0 shrink-0" role="region" aria-label="Items in your order">
+              <div id="checkout-order-items" class="flex flex-col gap-6 overflow-y-auto overscroll-y-contain max-h-[min(30rem,60vh)] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden" aria-live="polite"></div>
             </div>
-            <div class="flex justify-between">
-              <span class="text-on-surface-variant">Estimated VAT (12%)</span>
-              <span id="checkout-summary-vat" class="tabular-nums">₱ 0</span>
+
+            <!-- Discount Code -->
+            <div class="flex gap-3">
+              <input class="flex-grow border-[2px] border-primary bg-surface p-4 font-body-md text-body-md focus:outline-none focus:shadow-[4px_4px_0px_#000000] transition-all" placeholder="Discount code or gift card" type="text" />
+              <button class="bg-primary text-on-primary border-[2px] border-primary px-6 font-label-caps text-label-caps text-lg uppercase hover:bg-tertiary-fixed-dim hover:text-primary hover:shadow-[4px_4px_0px_#000000] transition-all">
+                Apply
+              </button>
             </div>
-          </div>
-          <div
-            class="flex justify-between items-end pt-4 border-t-[4px] border-primary mt-2"
-          >
-            <span
-              class="font-label-caps text-label-caps font-bold text-lg uppercase"
-              >Total</span
-            >
-            <span
-              id="checkout-summary-total"
-              class="font-headline-md text-headline-md font-bold tabular-nums"
-              >₱ 0</span
-            >
-          </div>
-          <!-- Desktop Action -->
-          <div class="hidden lg:block mt-6">
-            <button
-              type="button"
-              class="js-checkout-place-order w-full bg-primary text-on-primary py-5 px-6 font-headline-md text-[24px] uppercase neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all border-[2px] border-primary flex justify-center items-center gap-3"
-            >
-              PLACE ORDER
-              <span class="material-symbols-outlined text-[28px]"
-                >arrow_forward</span
-              >
-            </button>
-          </div>
-          <div
-            class="text-center font-body-md text-sm text-on-surface-variant mt-2 flex items-center justify-center gap-1"
-          >
-            <span class="material-symbols-outlined text-[16px]">verified</span>
-            Secure Encrypted Checkout
+
+            <!-- Totals -->
+            <div class="flex flex-col gap-3 font-body-md text-lg pt-4 border-t-[2px] border-dashed border-primary">
+              <div class="flex justify-between items-center">
+                <span class="text-on-surface-variant uppercase tracking-wider text-sm font-bold">Subtotal</span>
+                <span id="checkout-summary-subtotal" class="font-bold tabular-nums">₱ 0</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-on-surface-variant uppercase tracking-wider text-sm font-bold">Shipping</span>
+                <span class="font-bold uppercase text-[10px] self-center border-[2px] border-primary px-2 py-0.5 bg-tertiary-fixed-dim text-primary">Calculated next step</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-on-surface-variant uppercase tracking-wider text-sm font-bold">Estimated VAT</span>
+                <span id="checkout-summary-vat" class="tabular-nums font-bold text-on-surface-variant">₱ 0</span>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-end pt-6 border-t-[4px] border-primary mt-2">
+              <span class="font-label-caps text-label-caps font-bold text-xl uppercase tracking-widest">Total</span>
+              <span id="checkout-summary-total" class="font-headline-md text-4xl font-bold tabular-nums tracking-tighter">₱ 0</span>
+            </div>
+
+            <!-- Desktop Action -->
+            <div class="hidden lg:block mt-6">
+              <button type="button" class="js-checkout-place-order w-full bg-primary text-on-primary py-5 px-6 font-headline-md text-2xl uppercase border-[2px] border-primary shadow-[6px_6px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_#000000] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all flex justify-center items-center gap-3">
+                PLACE ORDER
+                <span class="material-symbols-outlined text-[28px]">arrow_forward</span>
+              </button>
+            </div>
+
+            <div class="text-center font-label-caps text-xs text-on-surface-variant mt-4 flex items-center justify-center gap-1 uppercase tracking-widest">
+              <span class="material-symbols-outlined text-[16px]">verified</span>
+              Secure Encrypted Checkout
+            </div>
           </div>
         </div>
+
       </div>
     </main>
     <!-- Footer Component Execution -->

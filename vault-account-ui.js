@@ -102,6 +102,46 @@
     setText("profile-email", session.email);
     setText("profile-phone", session.phone || "—");
     setText("profile-role", session.role || "customer");
+
+    var phoneEditBtn = document.getElementById("profile-phone-edit-btn");
+    var phoneDisplayBox = document.getElementById("profile-phone-display-container");
+    var phoneEditBox = document.getElementById("profile-phone-edit-container");
+    var phoneInput = document.getElementById("profile-phone-input");
+    var phoneSaveBtn = document.getElementById("profile-phone-save-btn");
+
+    if (phoneEditBtn && phoneDisplayBox && phoneEditBox && phoneInput && phoneSaveBtn) {
+      phoneEditBtn.onclick = function() {
+        phoneDisplayBox.classList.add("hidden");
+        phoneEditBox.classList.remove("hidden");
+        phoneEditBtn.classList.add("hidden");
+        phoneInput.value = session.phone || "";
+        phoneInput.focus();
+      };
+
+      phoneSaveBtn.onclick = function() {
+        var newPhone = phoneInput.value.trim();
+        session.phone = newPhone;
+        store.setSession(session);
+        
+        var regUsers = store.getRegisteredUsers();
+        var updated = false;
+        for (var i = 0; i < regUsers.length; i++) {
+          if (store.normalizeEmail(regUsers[i].email) === store.normalizeEmail(session.email)) {
+            regUsers[i].phone = newPhone;
+            updated = true;
+            break;
+          }
+        }
+        if (updated && store.REG_KEY) {
+          localStorage.setItem(store.REG_KEY, JSON.stringify(regUsers));
+        }
+
+        setText("profile-phone", newPhone || "—");
+        phoneDisplayBox.classList.remove("hidden");
+        phoneEditBox.classList.add("hidden");
+        phoneEditBtn.classList.remove("hidden");
+      };
+    }
     setText("profile-newsletter", session.newsletterOptIn ? "Subscribed" : "Not subscribed");
     setText(
       "profile-created",
@@ -120,15 +160,58 @@
 
     var initialsEl = document.getElementById("profile-avatar-initials");
     if (initialsEl) {
-      var nm = String(session.fullName || "").trim();
-      var parts = nm.split(/\s+/).filter(Boolean);
-      var initials =
-        parts.length >= 2
-          ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
-          : parts.length === 1
-            ? parts[0].slice(0, 2).toUpperCase()
-            : "?";
-      initialsEl.textContent = initials;
+      if (session.avatarDataUrl) {
+        initialsEl.textContent = "";
+        initialsEl.style.backgroundImage = "url('" + session.avatarDataUrl + "')";
+      } else {
+        initialsEl.style.backgroundImage = "none";
+        var nm = String(session.fullName || "").trim();
+        var parts = nm.split(/\s+/).filter(Boolean);
+        var initials =
+          parts.length >= 2
+            ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+            : parts.length === 1
+              ? parts[0].slice(0, 2).toUpperCase()
+              : "?";
+        initialsEl.textContent = initials;
+      }
+    }
+
+    var avatarBtn = document.getElementById("profile-avatar-edit-btn");
+    var avatarInput = document.getElementById("profile-avatar-input");
+    if (avatarBtn && avatarInput) {
+      avatarBtn.onclick = function() {
+        avatarInput.click();
+      };
+      avatarInput.onchange = function(e) {
+        var file = e.target.files && e.target.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function(ev) {
+          var dataUrl = ev.target.result;
+          session.avatarDataUrl = dataUrl;
+          store.setSession(session);
+          
+          var regUsers = store.getRegisteredUsers();
+          var updated = false;
+          for (var i = 0; i < regUsers.length; i++) {
+            if (store.normalizeEmail(regUsers[i].email) === store.normalizeEmail(session.email)) {
+              regUsers[i].avatarDataUrl = dataUrl;
+              updated = true;
+              break;
+            }
+          }
+          if (updated && store.REG_KEY) {
+            localStorage.setItem(store.REG_KEY, JSON.stringify(regUsers));
+          }
+          
+          if (initialsEl) {
+            initialsEl.textContent = "";
+            initialsEl.style.backgroundImage = "url('" + dataUrl + "')";
+          }
+        };
+        reader.readAsDataURL(file);
+      };
     }
 
     var addrBox = document.getElementById("profile-address-block");

@@ -1,0 +1,12 @@
+{
+  "name": "vault-ph",
+  "private": true,
+  "description": "Vault PH storefront — run npm start so sign-up can write users.json",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

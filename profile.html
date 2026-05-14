@@ -20,38 +20,28 @@
   <body
     class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-tertiary-fixed-dim selection:text-primary"
   >
-    <header
-      class="sticky top-0 z-30 border-b-[2px] border-primary bg-surface-container-lowest"
+    <nav
+      class="bg-surface text-primary font-headline-md text-headline-md font-label-caps text-label-caps docked full-width top-0 border-b-2 border-primary flat no shadows flex justify-between items-center w-full px-grid-margin py-4 sticky top-0 z-50"
     >
-      <div
-        class="max-w-[1440px] mx-auto px-4 md:px-grid-margin py-3.5 flex flex-wrap items-center justify-between gap-3"
-      >
-        <a
-          href="home.html"
-          class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90"
-          >VAULT PH</a
-        >
-        <nav
-          class="flex flex-wrap items-center gap-1 sm:gap-2 font-label-caps text-label-caps uppercase"
-        >
-          <a
-            href="collections.html"
-            class="text-on-surface-variant hover:bg-primary hover:text-on-primary px-2 py-1.5 min-h-[40px] inline-flex items-center no-underline transition-colors border-[2px] border-transparent hover:border-primary"
-            >Shop</a
-          >
-          <a
-            href="checkout.html"
-            class="text-on-surface-variant hover:bg-primary hover:text-on-primary px-2 py-1.5 min-h-[40px] inline-flex items-center no-underline transition-colors border-[2px] border-transparent hover:border-primary"
-            >Checkout</a
-          >
-          <span
-            class="bg-primary text-on-primary px-2 py-1.5 min-h-[40px] inline-flex items-center border-[2px] border-primary"
-            aria-current="page"
-            >Profile</span
-          >
-        </nav>
+      <div class="flex-1 flex justify-start"><a href="./home.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90">VAULT PH</a></div>
+      <div class="hidden md:flex gap-8 justify-center items-center">
+        <a class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1" href="home.html">HOME</a>
+        <a class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1" href="collections.html">SHOP</a>
+        <a class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1" href="archive.html">THE VAULT</a>
+        <a href="profile.html" class="bg-primary text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center">PROFILE</a>
+        <a href="checkout.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center gap-2">CART
+          <span class="vault-stack-badge hidden min-w-[1.25rem] h-[1.25rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-xs leading-none border border-primary" aria-hidden="true">0</span>
+        </a>
       </div>
-    </header>
+      <div class="flex-1 flex justify-end items-center gap-4">
+        <div class="flex md:hidden items-center gap-4">
+          <a href="profile.html" class="bg-primary text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center min-h-[44px]">PROFILE</a>
+          <a href="checkout.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center min-h-[44px] gap-2">CART
+            <span class="vault-stack-badge hidden min-w-[1.25rem] h-[1.25rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-xs leading-none border border-primary" aria-hidden="true">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
 
     <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-grid-margin py-8 md:py-12">
       <!-- Signed-out -->
@@ -95,15 +85,26 @@
             </p>
             <a
               href="home.html"
-              class="font-label-caps text-label-caps uppercase text-primary underline decoration-1 underline-offset-4 hover:text-tertiary-fixed-dim"
-              >Back to home</a
+              class="group inline-flex items-center justify-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary border-[2px] border-primary bg-surface px-4 py-2.5 min-h-[44px] min-w-[12rem] neo-shadow-hover hover:bg-primary hover:text-on-primary transition-colors duration-100 no-underline"
             >
+              <span class="material-symbols-outlined text-[1.35rem] leading-none" aria-hidden="true"
+                >arrow_back</span
+              >
+              <span>Back to home</span>
+            </a>
           </div>
         </div>
       </div>
 
       <!-- Signed-in -->
       <div id="profile-root" class="hidden w-full max-w-5xl mx-auto flex flex-col gap-8 md:gap-10">
+        <a
+          href="home.html"
+          class="group self-start inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary border-[2px] border-primary bg-surface px-3 py-2.5 min-h-[44px] hover:bg-primary hover:text-on-primary transition-colors duration-100 neo-shadow-hover no-underline"
+        >
+          <span class="material-symbols-outlined text-[1.35rem] leading-none" aria-hidden="true">arrow_back</span>
+          <span>Back to home</span>
+        </a>
         <!-- Hero -->
         <section
           class="relative border-[2px] border-primary bg-[#FAF9F9] neo-shadow p-6 md:p-10 lg:p-12"
@@ -112,17 +113,34 @@
             <div
               class="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start sm:items-center flex-grow min-w-0"
             >
-              <div
-                id="profile-avatar-initials"
-                class="flex h-24 w-24 sm:h-28 sm:w-28 shrink-0 items-center justify-center border-[3px] border-primary bg-tertiary-fixed-dim font-headline-md text-2xl sm:text-3xl font-bold uppercase tracking-tight text-primary"
-                aria-hidden="true"
-              >
-                —
+              <div class="relative group shrink-0">
+                <div
+                  id="profile-avatar-initials"
+                  class="flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center border-[3px] border-primary bg-tertiary-fixed-dim font-headline-md text-2xl sm:text-3xl font-bold uppercase tracking-tight text-primary overflow-hidden bg-cover bg-center"
+                  aria-hidden="true"
+                >
+                  —
+                </div>
+                <button
+                  id="profile-avatar-edit-btn"
+                  class="absolute bottom-[-6px] right-[-6px] flex h-9 w-9 items-center justify-center border-[2px] border-primary bg-surface text-primary hover:bg-primary hover:text-on-primary transition-colors rounded-full z-10"
+                  aria-label="Change profile picture"
+                >
+                  <span class="material-symbols-outlined text-[1.125rem]">photo_camera</span>
+                </button>
+                <input type="file" id="profile-avatar-input" class="hidden" accept="image/*" />
               </div>
               <div class="min-w-0 flex-grow">
-                <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.14em] mb-2">
-                  Registry member
-                </p>
+                <div class="flex justify-between items-start gap-4 mb-2">
+                  <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.14em] mt-1">
+                    Registry member
+                  </p>
+                  <span
+                    id="profile-role"
+                    class="inline-flex items-center font-label-caps text-label-caps uppercase px-3 py-1.5 border-[2px] border-primary bg-surface text-primary shrink-0"
+                    >—</span
+                  >
+                </div>
                 <h1
                   id="profile-full-name"
                   class="font-headline-md text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-primary mb-2 break-words"
@@ -136,11 +154,6 @@
                   —
                 </p>
                 <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-                  <span
-                    id="profile-role"
-                    class="inline-flex items-center font-label-caps text-label-caps uppercase px-3 py-1.5 border-[2px] border-primary bg-surface text-primary"
-                    >—</span
-                  >
                   <span
                     class="inline-flex items-center gap-1.5 font-body-md text-sm text-on-surface-variant"
                   >
@@ -166,16 +179,25 @@
                 Contact
               </div>
               <ul class="mt-8 space-y-5">
-                <li class="flex gap-4">
+                <li class="flex gap-4 items-start">
                   <span
                     class="flex h-11 w-11 shrink-0 items-center justify-center border-[2px] border-primary bg-[#FAF9F9] text-primary"
                     aria-hidden="true"
                   >
                     <span class="material-symbols-outlined">call</span>
                   </span>
-                  <div>
-                    <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-0.5">Phone</p>
-                    <p id="profile-phone" class="font-body-md text-body-md text-primary font-medium">—</p>
+                  <div class="flex-grow min-w-0">
+                    <div class="flex items-center justify-between">
+                      <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-0.5">Phone</p>
+                      <button id="profile-phone-edit-btn" class="text-primary hover:underline font-label-caps text-[0.7rem] font-bold uppercase tracking-wider" aria-label="Edit phone">Edit</button>
+                    </div>
+                    <div id="profile-phone-display-container">
+                      <p id="profile-phone" class="font-body-md text-body-md text-primary font-medium">—</p>
+                    </div>
+                    <div id="profile-phone-edit-container" class="hidden mt-1 flex flex-wrap gap-2">
+                      <input type="text" id="profile-phone-input" class="flex-grow bg-transparent border-b-[2px] border-primary focus:outline-none focus:border-primary font-body-md text-body-md text-primary px-1 py-0.5 min-w-[120px]" placeholder="+63 912 345 6789">
+                      <button id="profile-phone-save-btn" class="font-label-caps text-[0.7rem] uppercase bg-primary text-on-primary px-3 py-1 font-bold tracking-wider hover:bg-tertiary-fixed-dim hover:text-primary transition-colors border-[2px] border-primary">Save</button>
+                    </div>
                   </div>
                 </li>
                 <li class="flex gap-4">

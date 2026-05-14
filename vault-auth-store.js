@@ -5,6 +5,8 @@
 (function (global) {
   var REG_KEY = "vaultPhRegisteredUsers";
   var SESS_KEY = "vaultPhSession";
+  /** Full merged document (same shape as users.json) after sign-up sync. */
+  var SNAPSHOT_KEY = "vaultPhUsersJsonSnapshot";
 
   function normalizeEmail(e) {
     return String(e || "")
@@ -33,17 +35,76 @@
     saveRegisteredUsers(list);
   }
 
+  function usersJsonFetchUrl() {
+    return "./users.json?v=" + Date.now();
+  }
+
+  /**
+   * Loads users.json from the server and merges in local registrations (same list used for sign-in / sign-up).
+   */
   function fetchJsonUsers() {
-    return fetch("./users.json", { credentials: "same-origin" })
+    return fetch(usersJsonFetchUrl(), {
+      credentials: "same-origin",
+      cache: "no-store",
+    })
       .then(function (res) {
         if (!res.ok) throw new Error("users.json");
         return res.json();
       })
       .then(function (data) {
-        return data && Array.isArray(data.users) ? data.users : [];
+        var fileUsers = data && Array.isArray(data.users) ? data.users : [];
+        return mergeUserLists(fileUsers, getRegisteredUsers());
       })
       .catch(function () {
-        return [];
+        try {
+          var snap = localStorage.getItem(SNAPSHOT_KEY);
+          if (snap) {
+            var doc = JSON.parse(snap);
+            if (doc && Array.isArray(doc.users)) {
+              return mergeUserLists(doc.users, getRegisteredUsers());
+            }
+          }
+        } catch (err) {}
+        return mergeUserLists([], getRegisteredUsers());
+      });
+  }
+
+  /**
+   * Re-reads users.json, merges with all registered users, and saves a users.json-shaped snapshot to localStorage.
+   * Browsers cannot write the real file; copy from DevTools → Application → Local Storage or use Export if you add it.
+   */
+  function persistUsersJsonSnapshot() {
+    return fetch(usersJsonFetchUrl(), {
+      credentials: "same-origin",
+      cache: "no-store",
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("users.json");
+        return res.json();
+      })
+      .then(function (base) {
+        var merged = mergeUserLists(base.users || [], getRegisteredUsers());
+        var doc = {
+          version: typeof base.version === "number" ? base.version : 1,
+          updatedAt: new Date().toISOString(),
+          users: merged,
+        };
+        try {
+          localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(doc, null, 2));
+        } catch (err) {}
+        return doc;
+      })
+      .catch(function () {
+        var reg = getRegisteredUsers();
+        var doc = {
+          version: 1,
+          updatedAt: new Date().toISOString(),
+          users: reg,
+        };
+        try {
+          localStorage.setItem(SNAPSHOT_KEY, JSON.stringify(doc, null, 2));
+        } catch (err2) {}
+        return doc;
       });
   }
 
@@ -102,10 +163,12 @@
   global.VAULT_AUTH_STORE = {
     REG_KEY: REG_KEY,
     SESS_KEY: SESS_KEY,
+    SNAPSHOT_KEY: SNAPSHOT_KEY,
     normalizeEmail: normalizeEmail,
     getRegisteredUsers: getRegisteredUsers,
     registerUser: registerUser,
     fetchJsonUsers: fetchJsonUsers,
+    persistUsersJsonSnapshot: persistUsersJsonSnapshot,
     mergeUserLists: mergeUserLists,
     findUserByCredentials: findUserByCredentials,
     setSession: setSession,

@@ -22,7 +22,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     if (!store.getSession()) return;
-    if (document.getElementById("sign-in-form") || document.getElementById("sign-up-form")) {
+    if (document.getElementById("sign-in-form")) {
       window.location.replace("home.html");
     }
   });
@@ -36,10 +36,8 @@
       var password = passEl ? passEl.value : "";
       if (!email || !password) return;
 
-      store.fetchJsonUsers().then(function (jsonUsers) {
-        var reg = store.getRegisteredUsers();
-        var all = store.mergeUserLists(jsonUsers, reg);
-        var user = store.findUserByCredentials(email, password, all);
+      store.fetchJsonUsers().then(function (allUsers) {
+        var user = store.findUserByCredentials(email, password, allUsers);
         if (!user) {
           if (passEl) {
             passEl.setCustomValidity("Invalid email or password.");
@@ -84,11 +82,10 @@
 
       var newsletterEl = document.getElementById("signup-newsletter");
 
-      store.fetchJsonUsers().then(function (jsonUsers) {
-        var reg = store.getRegisteredUsers();
-        var all = store.mergeUserLists(jsonUsers, reg);
+      store.fetchJsonUsers().then(function (allUsers) {
+        if (!Array.isArray(allUsers)) allUsers = [];
         var n = store.normalizeEmail(emailRaw);
-        var taken = all.some(function (u) {
+        var taken = allUsers.some(function (u) {
           return u && store.normalizeEmail(u.email) === n;
         });
         if (taken) {
@@ -120,9 +117,54 @@
           addresses: [addr],
         };
 
-        store.registerUser(newUser);
+        return fetch("/api/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user: newUser }),
+        })
+          .then(function (res) {
+            if (res.status === 409) {
+              window.alert("This email is already registered. Sign in instead.");
+              return Promise.reject({ duplicate: true });
+            }
+            if (!res.ok) {
+              return res.text().then(function (t) {
+                var msg = "Could not save to users.json.";
+                try {
+                  var j = JSON.parse(t);
+                  if (j && j.error) msg = j.error;
+                } catch (e) {}
+                throw new Error(msg);
+              });
+            }
+            return res.text().then(function (t) {
+              try {
+                return t ? JSON.parse(t) : { ok: true };
+              } catch (e2) {
+                return { ok: true };
+              }
+            });
+          })
+          .then(function () {
+            return store.persistUsersJsonSnapshot();
+          })
+          .catch(function (err) {
+            if (err && err.duplicate) return Promise.reject(err);
+            console.warn("vault-ph: POST /api/register failed — saving to localStorage only.", err);
+            store.registerUser(newUser);
+            return store.persistUsersJsonSnapshot();
+          });
+      }).then(function (doc) {
+        if (!doc) return;
         window.location.href =
           "sign-in.html?email=" + encodeURIComponent(emailRaw);
+      }).catch(function (err) {
+        if (err && err.duplicate) return;
+        console.error("vault-ph sign-up:", err);
+        window.alert(
+          (err && err.message) ||
+            "Sign-up could not complete. If you are not using this app’s Node server, run `npm start` and open http://localhost:3000 — or check the browser console for details."
+        );
       });
     });
   }

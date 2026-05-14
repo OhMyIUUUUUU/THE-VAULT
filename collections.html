@@ -34,11 +34,8 @@
       <div
         class="max-w-[1600px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 flex justify-between items-center py-4"
       >
-      <a
-        href="./home.html"
-        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90"
-        >VAULT PH</a>
-      <div class="hidden md:flex gap-8">
+      <div class="flex-1 flex justify-start"><a href="./home.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90">VAULT PH</a></div>
+      <div class="hidden md:flex gap-8 justify-center items-center">
         <a
           class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1"
           href="home.html"
@@ -54,27 +51,26 @@
           href="archive.html"
           >THE VAULT</a
         >
-      </div>
-      <div class="flex items-center gap-4">
-        <a
-          href="profile.html"
-          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] text-primary hover:bg-primary hover:text-on-primary p-1 transition-colors duration-100 no-underline border-[2px] border-transparent hover:border-primary"
-          aria-label="Profile"
-        >
-          <span class="material-symbols-outlined">person</span>
-        </a>
-        <a
-          href="checkout.html"
-          class="relative inline-flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary p-1 transition-colors duration-100 min-h-[44px] min-w-[44px]"
-          aria-label="Go to checkout"
-        >
-          <span class="material-symbols-outlined">shopping_cart</span>
+        <a href="profile.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center ">PROFILE</a>
+        <a href="checkout.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center  gap-2">CART
           <span
-            class="vault-stack-badge hidden absolute top-0.5 right-0.5 min-w-[1.125rem] h-[1.125rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-[10px] leading-none border border-primary"
+            class="vault-stack-badge hidden  min-w-[1.25rem] h-[1.25rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-xs leading-none border border-primary"
             aria-hidden="true"
             >0</span
           >
         </a>
+      </div>
+      <div class="flex-1 flex justify-end items-center gap-4">
+        <div class="flex md:hidden items-center gap-4">
+          <a href="profile.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center min-h-[44px]">PROFILE</a>
+        <a href="checkout.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center min-h-[44px] gap-2">CART
+          <span
+            class="vault-stack-badge hidden  min-w-[1.25rem] h-[1.25rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-xs leading-none border border-primary"
+            aria-hidden="true"
+            >0</span
+          >
+        </a>
+        </div>
       </div>
       </div>
     </nav>

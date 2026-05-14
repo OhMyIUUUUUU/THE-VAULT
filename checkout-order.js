@@ -56,27 +56,27 @@
         ? escapeHtml(formatPeso(p.price)) + " × " + qty
         : "Qty: " + qty;
     return (
-      '<div class="flex gap-4 items-start relative group">' +
-      '<div class="w-24 h-24 border-[2px] border-primary bg-surface overflow-hidden relative shrink-0">' +
+      '<div class="flex gap-4 items-start relative group p-3 -mx-3 border-[2px] border-transparent hover:border-primary hover:bg-surface hover:shadow-[4px_4px_0px_#000000] transition-all duration-200">' +
+      '<div class="w-20 h-28 border-[2px] border-primary bg-surface overflow-hidden relative shrink-0">' +
       '<div class="absolute -top-2 -right-2 bg-primary text-on-primary w-6 h-6 flex items-center justify-center font-label-caps text-[10px] rounded-full z-10">' +
       qty +
       "</div>" +
       '<img alt="' +
       escapeAttr(p.name) +
-      '" class="w-full h-full object-cover grayscale mix-blend-multiply" src="' +
+      '" class="w-full h-full object-cover grayscale mix-blend-multiply group-hover:grayscale-0 transition-all duration-300" src="' +
       img +
       '" referrerpolicy="no-referrer" decoding="async" />' +
       "</div>" +
-      '<div class="flex-grow flex flex-col justify-between min-h-[6rem] pt-1">' +
+      '<div class="flex-grow flex flex-col justify-between min-h-[7rem] pt-1">' +
       "<div>" +
-      '<h3 class="font-label-caps text-label-caps font-bold uppercase">' +
+      '<h3 class="font-label-caps text-label-caps font-bold uppercase tracking-tight">' +
       name +
       "</h3>" +
       '<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">' +
       meta +
       "</p>" +
       "</div>" +
-      '<div class="font-label-caps text-label-caps font-bold mt-2">' +
+      '<div class="font-headline-md text-lg font-bold mt-2 tabular-nums tracking-tight">' +
       escapeHtml(formatPeso(lineTotal)) +
       "</div>" +
       "</div>" +
@@ -94,9 +94,9 @@
     var products = window.VAULT_PRODUCTS || [];
     if (!products.length) {
       itemsEl.innerHTML =
-        '<div class="text-center py-8 px-4">' +
+        '<div class="text-center py-10 px-6 border-[2px] border-dashed border-primary bg-surface shadow-[4px_4px_0px_#000000]">' +
         '<p class="font-body-md text-on-surface-variant">Catalog unavailable. Open the shop to load your stack.</p>' +
-        '<a href="collections.html" class="inline-block mt-4 font-label-caps text-label-caps uppercase text-primary underline">Return to shop</a>' +
+        '<a href="collections.html" class="inline-flex items-center gap-2 mt-4 font-label-caps text-label-caps uppercase text-primary border-b-[2px] border-primary hover:text-tertiary-fixed-dim hover:border-tertiary-fixed-dim transition-colors pb-1">Return to shop <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>' +
         "</div>";
       subEl.textContent = formatPeso(0);
       vatEl.textContent = formatPeso(0);
@@ -109,10 +109,10 @@
 
     if (!lines.length) {
       itemsEl.innerHTML =
-        '<div class="text-center py-8 px-4 border-[2px] border-dashed border-primary bg-surface">' +
-        '<span class="material-symbols-outlined text-3xl text-on-surface-variant mb-2 block">inventory_2</span>' +
-        '<p class="font-body-md text-on-surface-variant">Nothing in your stack. Add pieces from the shop floor.</p>' +
-        '<a href="collections.html" class="inline-block mt-4 font-label-caps text-label-caps uppercase text-primary underline">Browse collections</a>' +
+        '<div class="text-center py-10 px-6 border-[2px] border-dashed border-primary bg-surface shadow-[4px_4px_0px_#000000]">' +
+        '<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-3 block">inventory_2</span>' +
+        '<p class="font-body-md text-on-surface-variant text-lg">Nothing in your stack.</p>' +
+        '<a href="collections.html" class="inline-flex items-center gap-2 mt-6 font-label-caps text-label-caps uppercase text-primary border-b-[2px] border-primary hover:text-tertiary-fixed-dim hover:border-tertiary-fixed-dim transition-colors pb-1">Browse collections <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>' +
         "</div>";
       subEl.textContent = formatPeso(0);
       vatEl.textContent = formatPeso(0);

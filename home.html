@@ -29,11 +29,8 @@
     <nav
       class="bg-surface text-primary font-headline-md text-headline-md font-label-caps text-label-caps docked full-width top-0 border-b-2 border-primary flat no shadows flex justify-between items-center w-full px-grid-margin py-4 sticky top-0 z-50"
     >
-      <a
-        href="./home.html"
-        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90"
-        >VAULT PH</a>
-      <div class="hidden md:flex gap-8">
+      <div class="flex-1 flex justify-start"><a href="./home.html" class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90">VAULT PH</a></div>
+      <div class="hidden md:flex gap-8 justify-center items-center">
         <a
           class="bg-primary text-on-primary transition-colors duration-100 px-2 py-1"
           href="home.html"
@@ -49,27 +46,26 @@
           href="archive.html"
           >THE VAULT</a
         >
-      </div>
-      <div class="flex items-center gap-4">
-        <a
-          href="profile.html"
-          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] text-primary hover:bg-primary hover:text-on-primary p-1 transition-colors duration-100 no-underline border-[2px] border-transparent hover:border-primary"
-          aria-label="Profile"
-        >
-          <span class="material-symbols-outlined">person</span>
-        </a>
-        <a
-          href="checkout.html"
-          class="relative inline-flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary p-1 min-h-[44px] min-w-[44px] transition-colors duration-100"
-          aria-label="Go to checkout"
-        >
-          <span class="material-symbols-outlined">shopping_cart</span>
+        <a href="profile.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center ">PROFILE</a>
+        <a href="checkout.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center  gap-2">CART
           <span
-            class="vault-stack-badge hidden absolute top-0.5 right-0.5 min-w-[1.125rem] h-[1.125rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-[10px] leading-none border border-primary"
+            class="vault-stack-badge hidden  min-w-[1.25rem] h-[1.25rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-xs leading-none border border-primary"
             aria-hidden="true"
             >0</span
           >
         </a>
+      </div>
+      <div class="flex-1 flex justify-end items-center gap-4">
+        <div class="flex md:hidden items-center gap-4">
+          <a href="profile.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center min-h-[44px]">PROFILE</a>
+        <a href="checkout.html" class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1 no-underline uppercase font-bold inline-flex items-center min-h-[44px] gap-2">CART
+          <span
+            class="vault-stack-badge hidden  min-w-[1.25rem] h-[1.25rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-xs leading-none border border-primary"
+            aria-hidden="true"
+            >0</span
+          >
+        </a>
+        </div>
       </div>
     </nav>
     <!-- Main Content Canvas -->
@@ -119,12 +115,32 @@
         <div
           class="md:col-span-5 h-[600px] md:h-auto border-t-2 md:border-t-0 border-primary bg-surface relative overflow-hidden"
         >
-          <img
-            alt="Hero Fashion Shot"
-            class="hero-editorial-zoom w-full h-full object-cover mix-blend-luminosity"
-            data-alt="A striking studio fashion editorial shot. A single figure wearing a highly structured, avant-garde black jacket and wide-leg trousers. The background is stark white. The lighting is harsh and high-key, creating solid black cast shadows. The composition is entirely asymmetrical, emphasizing the sharp angles of the garment."
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA68KJ1Zt1gUtTApcwVTlUUww8hcpz3vUM1MX2zgMeF_tvu2g30oXIQAbhEC_JAh4duCMCzfkd4Ab_agHk5NxMuhUjKuyE7_7CUtH7i5IQcTFXmpwByD4rtKsMeapypLPXnRLDcgFFpCiBFYzbmKBsUmqkO91lU4nPASnE0CMbfdroQjlY7PTALio1lsVks5Mah6pjwtkbqjDv2d4VoGteoIjRY4Wp-pZL79TOK_V9TpXLzLx_mm5vnM_R6BhEUN3vpshk_cyB4WQo"
-          />
+                    <!-- Carousel Images -->
+          <div id="hero-carousel-track" class="relative w-full h-full">
+            <img
+              alt="Hero Fashion Shot 1"
+              class="hero-carousel-slide absolute inset-0 w-full h-full object-cover mix-blend-luminosity transition-opacity duration-700 opacity-100 z-10"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA68KJ1Zt1gUtTApcwVTlUUww8hcpz3vUM1MX2zgMeF_tvu2g30oXIQAbhEC_JAh4duCMCzfkd4Ab_agHk5NxMuhUjKuyE7_7CUtH7i5IQcTFXmpwByD4rtKsMeapypLPXnRLDcgFFpCiBFYzbmKBsUmqkO91lU4nPASnE0CMbfdroQjlY7PTALio1lsVks5Mah6pjwtkbqjDv2d4VoGteoIjRY4Wp-pZL79TOK_V9TpXLzLx_mm5vnM_R6BhEUN3vpshk_cyB4WQo"
+            />
+            <img
+              alt="Hero Fashion Shot 2"
+              class="hero-carousel-slide absolute inset-0 w-full h-full object-cover mix-blend-luminosity transition-opacity duration-700 opacity-0 z-0"
+              src="./Gemini_Generated_Image_1.png"
+            />
+            <img
+              alt="Hero Fashion Shot 3"
+              class="hero-carousel-slide absolute inset-0 w-full h-full object-cover mix-blend-luminosity transition-opacity duration-700 opacity-0 z-0"
+              src="./Gemini_Generated_Image_2.png"
+            />
+          </div>
+          
+          <!-- Carousel Controls -->
+          <button id="hero-prev" class="absolute top-1/2 left-4 -translate-y-1/2 z-20 bg-surface text-primary border-[2px] border-primary w-12 h-12 flex items-center justify-center hover:bg-primary hover:text-on-primary hover:shadow-[4px_4px_0px_#000000] active:translate-y-[calc(-50%+2px)] active:translate-x-[2px] active:shadow-none transition-all" aria-label="Previous image">
+            <span class="material-symbols-outlined">arrow_back</span>
+          </button>
+          <button id="hero-next" class="absolute top-1/2 right-4 -translate-y-1/2 z-20 bg-surface text-primary border-[2px] border-primary w-12 h-12 flex items-center justify-center hover:bg-primary hover:text-on-primary hover:shadow-[4px_4px_0px_#000000] active:translate-y-[calc(-50%+2px)] active:translate-x-[2px] active:shadow-none transition-all" aria-label="Next image">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
         </div>
       </section>
       <!-- Featured Collections -->
@@ -489,5 +505,6 @@
     <script src="./vault-stack.js" defer></script>
     <script src="./index-new-arrivals.js" defer></script>
     <script src="./index-hero-typewriter.js" defer></script>
+      <script src="./hero-carousel.js" defer></script>
   </body>
 </html>

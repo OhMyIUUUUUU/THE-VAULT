@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-14T00:00:00.000Z",
+  "updatedAt": "2026-05-14T18:07:32.697Z",
   "users": [
     {
       "id": "usr_001",
@@ -57,6 +57,29 @@
           "region": "NCR",
           "postalCode": "1100",
           "country": "PH"
+        }
+      ]
+    },
+    {
+      "id": "usr_1778782052690",
+      "fullName": "Rodel Lingcopines",
+      "email": "lingcopinesrodel3@gmail.com",
+      "passwordDemo": "12345678",
+      "phone": "",
+      "role": "customer",
+      "newsletterOptIn": true,
+      "registryTermsAccepted": true,
+      "createdAt": "2026-05-14T18:07:32.690Z",
+      "lastLoginAt": null,
+      "addresses": [
+        {
+          "label": "default",
+          "line1": "dsadas",
+          "city": "111",
+          "region": "321312",
+          "postalCode": "231321",
+          "country": "PH",
+          "line2": "dsadasd"
         }
       ]
     }
