@@ -29,28 +29,37 @@
     <nav
       class="bg-surface text-primary border-b-[2px] border-primary sticky top-0 z-50 flex justify-between items-center w-full px-grid-margin py-4"
     >
-      <div
-        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary"
-      >
-        VAULT PH
-      </div>
+      <a
+        href="./home.html"
+        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90"
+        >VAULT PH</a>
       <div class="flex items-center gap-stack-sm">
-        <button
-          class="hover:bg-primary hover:text-on-primary transition-colors duration-100 p-2 flex items-center justify-center"
-        >
-          <span class="material-symbols-outlined">shopping_cart</span>
-        </button>
-        <button
-          class="hover:bg-primary hover:text-on-primary transition-colors duration-100 p-2 flex items-center justify-center"
+        <a
+          href="profile.html"
+          class="hover:bg-primary hover:text-on-primary transition-colors duration-100 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-primary border-0 bg-transparent no-underline"
+          aria-label="Profile"
         >
           <span class="material-symbols-outlined">person</span>
-        </button>
+        </a>
+        <a
+          href="checkout.html"
+          class="relative inline-flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors duration-100 p-2 min-h-[44px] min-w-[44px] text-primary border-0"
+          aria-label="Go to checkout"
+        >
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span
+            class="vault-stack-badge hidden absolute top-0.5 right-0.5 min-w-[1.125rem] h-[1.125rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-[10px] leading-none border border-primary"
+            aria-hidden="true"
+            >0</span
+          >
+        </a>
       </div>
     </nav>
     <!-- Main Content Canvas -->
     <main
       class="flex-grow max-w-[1440px] mx-auto w-full px-grid-margin py-stack-md flex flex-col gap-stack-lg"
     >
+      <div class="flex-1 min-w-0 flex flex-col gap-stack-lg w-full">
       <div
         id="detail-not-found"
         class="hidden border-[2px] border-primary bg-surface p-stack-lg text-center max-w-xl mx-auto w-full"
@@ -68,25 +77,44 @@
         >
       </div>
       <div id="detail-loaded" class="flex flex-col gap-stack-lg">
+      <a
+        href="collections.html"
+        class="group inline-flex items-center gap-2 self-start font-label-caps text-label-caps uppercase tracking-wider text-primary border-[2px] border-primary bg-surface px-3 py-2.5 min-h-[44px] hover:bg-primary hover:text-on-primary transition-colors duration-100 no-underline"
+        id="detail-back-link"
+      >
+        <span class="material-symbols-outlined text-[1.35rem] leading-none" aria-hidden="true"
+          >arrow_back</span
+        >
+        <span class="uppercase">Back to shop</span>
+      </a>
       <!-- Product Detail Section - Split Screen -->
       <section
         class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter border-[2px] border-primary bg-surface"
       >
-        <!-- Left: Imagery -->
+        <!-- Left: Imagery (smooth zoom: full body ↔ torso, transform-origin on chest) -->
         <div
-          class="relative w-full aspect-[3/4] md:aspect-auto md:h-[800px] border-r-0 md:border-r-[2px] border-b-[2px] md:border-b-0 border-primary bg-surface-container"
+          class="relative w-full aspect-[3/4] md:aspect-auto md:h-[800px] border-r-0 md:border-r-[2px] border-b-[2px] md:border-b-0 border-primary bg-surface-container overflow-hidden"
         >
-          <img
-            id="detail-hero-img"
-            alt=""
-            class="w-full h-full object-cover"
-            src=""
-            referrerpolicy="no-referrer"
-            decoding="async"
-          />
+          <button
+            type="button"
+            id="detail-hero-zoom"
+            class="detail-hero-zoom-btn absolute inset-0 z-0 flex h-full w-full cursor-zoom-in border-0 bg-transparent p-0 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface-container"
+            aria-label="Zoom product image (torso). Press again to show full length."
+            aria-pressed="false"
+          >
+            <img
+              id="detail-hero-img"
+              alt=""
+              class="detail-hero-img pointer-events-none h-full w-full object-cover transition-transform duration-700 ease-out motion-reduce:transition-none will-change-transform"
+              style="transform-origin: center 38%"
+              src=""
+              referrerpolicy="no-referrer"
+              decoding="async"
+            />
+          </button>
           <div
             id="detail-badge"
-            class="absolute top-4 left-4 px-3 py-1 font-label-caps text-label-caps border-[1px] border-primary shadow-[2px_2px_0px_#000000] hidden"
+            class="pointer-events-none absolute left-4 top-4 z-10 px-3 py-1 font-label-caps text-label-caps border-[1px] border-primary shadow-[2px_2px_0px_#000000] hidden"
           ></div>
         </div>
         <!-- Right: Product Details -->
@@ -162,6 +190,7 @@
         ></div>
       </section>
       </div>
+      </div>
     </main>
     <!-- Footer Component -->
     <footer
@@ -212,6 +241,7 @@
       </div>
     </footer>
     <script src="./catalog-data.js" defer></script>
+    <script src="./vault-stack.js" defer></script>
     <script src="./product-detail-page.js" defer></script>
   </body>
 </html>

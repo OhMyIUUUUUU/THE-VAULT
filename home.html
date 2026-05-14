@@ -1,0 +1,493 @@
+<!-- Vault PH - Home -->
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vault PH - Fashion Streetwear</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  <script src="./logic.js"></script>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md antialiased selection:bg-tertiary-fixed-dim selection:text-primary"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="bg-surface text-primary font-headline-md text-headline-md font-label-caps text-label-caps docked full-width top-0 border-b-2 border-primary flat no shadows flex justify-between items-center w-full px-grid-margin py-4 sticky top-0 z-50"
+    >
+      <a
+        href="./home.html"
+        class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90"
+        >VAULT PH</a>
+      <div class="hidden md:flex gap-8">
+        <a
+          class="bg-primary text-on-primary transition-colors duration-100 px-2 py-1"
+          href="home.html"
+          >HOME</a
+        >
+        <a
+          class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1"
+          href="collections.html"
+          >SHOP</a
+        >
+        <a
+          class="text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100 px-2 py-1"
+          href="archive.html"
+          >THE VAULT</a
+        >
+      </div>
+      <div class="flex items-center gap-4">
+        <a
+          href="profile.html"
+          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] text-primary hover:bg-primary hover:text-on-primary p-1 transition-colors duration-100 no-underline border-[2px] border-transparent hover:border-primary"
+          aria-label="Profile"
+        >
+          <span class="material-symbols-outlined">person</span>
+        </a>
+        <a
+          href="checkout.html"
+          class="relative inline-flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary p-1 min-h-[44px] min-w-[44px] transition-colors duration-100"
+          aria-label="Go to checkout"
+        >
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <span
+            class="vault-stack-badge hidden absolute top-0.5 right-0.5 min-w-[1.125rem] h-[1.125rem] px-0.5 flex items-center justify-center bg-primary text-on-primary font-label-caps text-[10px] leading-none border border-primary"
+            aria-hidden="true"
+            >0</span
+          >
+        </a>
+      </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main
+      class="max-w-[1440px] mx-auto border-l-2 border-r-2 border-primary my-stack-md bg-surface-container-lowest brutal-shadow"
+    >
+      <!-- Hero Section -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-12 border-b-2 border-primary"
+      >
+        <div
+          class="md:col-span-7 border-r-2 border-primary flex flex-col justify-center p-grid-margin relative overflow-hidden bg-surface-container"
+        >
+          <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?q=80&amp;w=2574&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-30 mix-blend-multiply"
+            data-alt="A gritty, urban streetwear fashion photography shot. A model stands against a brutalist concrete wall, wearing oversized, structured dark clothing. High contrast black and white processing with heavy grain. Sharp angles, dramatic lighting, conveying a raw, architectural streetwear aesthetic in a minimalist setting."
+          ></div>
+          <h1
+            class="font-display-xxl text-primary uppercase relative z-10 mb-stack-md text-[clamp(2.25rem,0.5rem+7vw,7.5rem)] leading-[0.92] tracking-tight text-balance min-h-[2.6em]"
+            aria-label="FASHION STREETWEAR"
+          >
+            <span id="hero-type-line1" class="block whitespace-nowrap"></span>
+            <span class="block whitespace-nowrap"
+              ><span id="hero-type-line2"></span
+              ><span class="hero-type-cursor" aria-hidden="true"></span
+            ></span>
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant max-w-md relative z-10 mb-stack-lg"
+          >
+            Uncompromising structures. Rigid lines. The intersection of
+            brutalism and luxury apparel.
+          </p>
+          <div class="relative z-10 flex gap-4">
+            <button
+              class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 brutal-shadow transition-all hover:bg-tertiary-fixed-dim hover:text-primary active:translate-x-1 active:translate-y-1 active:shadow-none"
+            >
+              EXPLORE SEASON 01
+            </button>
+            <a
+              href="archive.html"
+              class="inline-flex cursor-pointer items-center justify-center bg-transparent text-primary font-label-caps text-label-caps px-8 py-4 brutal-border transition-all hover:bg-surface-container-highest no-underline"
+              >THE VAULT</a
+            >
+          </div>
+        </div>
+        <div
+          class="md:col-span-5 h-[600px] md:h-auto border-t-2 md:border-t-0 border-primary bg-surface relative overflow-hidden"
+        >
+          <img
+            alt="Hero Fashion Shot"
+            class="hero-editorial-zoom w-full h-full object-cover mix-blend-luminosity"
+            data-alt="A striking studio fashion editorial shot. A single figure wearing a highly structured, avant-garde black jacket and wide-leg trousers. The background is stark white. The lighting is harsh and high-key, creating solid black cast shadows. The composition is entirely asymmetrical, emphasizing the sharp angles of the garment."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA68KJ1Zt1gUtTApcwVTlUUww8hcpz3vUM1MX2zgMeF_tvu2g30oXIQAbhEC_JAh4duCMCzfkd4Ab_agHk5NxMuhUjKuyE7_7CUtH7i5IQcTFXmpwByD4rtKsMeapypLPXnRLDcgFFpCiBFYzbmKBsUmqkO91lU4nPASnE0CMbfdroQjlY7PTALio1lsVks5Mah6pjwtkbqjDv2d4VoGteoIjRY4Wp-pZL79TOK_V9TpXLzLx_mm5vnM_R6BhEUN3vpshk_cyB4WQo"
+          />
+        </div>
+      </section>
+      <!-- Featured Collections -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 border-b-2 border-primary"
+      >
+        <div
+          class="group relative h-[500px] border-b-2 md:border-b-0 md:border-r-2 border-primary overflow-hidden bg-primary cursor-pointer"
+        >
+          <img
+            class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300 grayscale"
+            data-alt="A close-up shot of heavy, structured fabric textures. Thick black denim and industrial metal hardware. The lighting highlights the rigid seams and architectural construction of the streetwear garment. A stark, high-contrast, black and white neo-brutalist fashion detail image."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLf7pHW0cMuvGCEoIs-Dz9V0mqLOv8HnZq2PQS41JH4GCSPSulKqFyOu4p0Oc1N2WOyIHfe9Shu1HOftLnO5qYK0l_HY2DV2f_xWw4Tl8uR56onH-fnMMnJrpWxkUpF2FAAKjr8G0dhVjixcnHx3Q5qCicVqPRs-_h92vJ8KnaGnzvm7ylE4_YQYXIgJYWPRFIp-FTN38ACfa2_gv0bFLiFYa87ur1preXEz8rVshwhYZcZLxdo2a9HO06zZhiq1mTCX8kBnUu3T4"
+          />
+          <div
+            class="absolute inset-0 p-grid-margin flex flex-col justify-between"
+          >
+            <span
+              class="bg-surface text-primary font-label-caps text-label-caps px-3 py-1 inline-block w-max brutal-border"
+              >SEASON 01</span
+            >
+            <h2 class="font-headline-lg text-headline-lg text-on-primary">
+              STRUCTURAL<br />INTEGRITY
+            </h2>
+          </div>
+        </div>
+        <div
+          class="group relative h-[500px] overflow-hidden bg-surface-container cursor-pointer"
+        >
+          <img
+            class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
+            data-alt="A minimalist layout of folded premium streetwear essentials on a concrete floor. T-shirts and hoodies in stark black, white, and vintage gold tones. Shot directly from above with harsh, direct lighting creating hard drop shadows. The aesthetic is raw, organized, and highly architectural."
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCndfmgsXcPZJPg18rhTCiyuzR7Kpehu6R6CSqVMpTCpa_YCPet2oVqJKsj0anzlzoFo1d69raEndb_knAfaCUumMXDrsmMWV8_5WEieGqJyhaCcdI0ddaIoBGvegFwutgIDCxvTQkCrfydn-hnIamr3J_kKmFL3zW7znViPxVIBTdVJOvsSXsxACm1AZ3DRnzWwfGKP1vt6gct1f6NqQhz3cEG1O9rFXQeTiBIKBi48T5WcEzZcgrIMMUCVNtWZ6MNY9sGqa1JEfM"
+          />
+          <div
+            class="absolute inset-0 p-grid-margin flex flex-col justify-between"
+          >
+            <span
+              class="bg-tertiary-fixed-dim text-primary font-label-caps text-label-caps px-3 py-1 inline-block w-max brutal-border"
+              >CORE COLLECTION</span
+            >
+            <h2
+              class="font-headline-lg text-headline-lg text-tertiary-fixed-dim drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]"
+            >
+              THE<br />ESSENTIALS
+            </h2>
+          </div>
+        </div>
+      </section>
+      <!-- Flash Sale Banner (scrolling ticker) -->
+      <div
+        class="vault-marquee bg-tertiary-fixed-dim text-primary border-b-2 border-primary py-4"
+      >
+        <div class="vault-marquee-track font-headline-md text-headline-md whitespace-nowrap">
+          <div class="vault-marquee-segment">
+            <span>FLASH SALE</span>
+            <span>//</span>
+            <span>VAULT EXCLUSIVES</span>
+            <span>//</span>
+            <span>UP TO 40% OFF</span>
+            <span>//</span>
+            <span>FLASH SALE</span>
+            <span>//</span>
+            <span>VAULT EXCLUSIVES</span>
+            <span>//</span>
+            <span>UP TO 40% OFF</span>
+            <span>//</span>
+          </div>
+          <div class="vault-marquee-segment" aria-hidden="true">
+            <span>FLASH SALE</span>
+            <span>//</span>
+            <span>VAULT EXCLUSIVES</span>
+            <span>//</span>
+            <span>UP TO 40% OFF</span>
+            <span>//</span>
+            <span>FLASH SALE</span>
+            <span>//</span>
+            <span>VAULT EXCLUSIVES</span>
+            <span>//</span>
+            <span>UP TO 40% OFF</span>
+            <span>//</span>
+          </div>
+        </div>
+      </div>
+      <!-- Trending Products Grid -->
+      <section class="border-b-2 border-primary">
+        <div
+          class="flex justify-between items-end p-grid-margin border-b-2 border-primary"
+        >
+          <h3 class="font-headline-md text-headline-md text-primary">
+            NEW ARRIVALS
+          </h3>
+          <a
+            class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 hover:text-on-surface-variant transition-colors"
+            href="./collections.html"
+            >VIEW ALL</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Product 1 -->
+          <div
+            class="border-b-2 sm:border-b-0 sm:border-r-2 lg:border-b-0 border-primary p-stack-sm flex flex-col bg-surface hover:bg-surface-container-highest transition-colors"
+          >
+            <div
+              class="bg-surface-container-low aspect-square mb-stack-sm border-2 border-transparent hover:border-primary transition-colors relative group"
+            >
+              <img
+                class="w-full h-full object-cover mix-blend-luminosity"
+                data-alt="A stark product shot of a black architectural oversized hoodie. The garment is laid flat against a harsh white background, demonstrating its rigid boxy cut and thick, premium fabric. High contrast lighting emphasizes the seams and structural integrity of the piece."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoaDeHYiok9I9AWbXszJUGIiOYIAXmWBzDl6HanjVV53bTjiClmKlW5LswHTaT7sD6pR8tlwQK51WNKCeLXiH_iYEuahvprQ0Uq2d181Kr4j4-HYE07WqIxm6tVbiBIEo6aODpolpsMzFpy84EvpQG4jreDCW8m15VuVjt9-fLfpo-NULOuIPzhGmqhlUueEl0TnxKxzJOsf6Tskos1t9ob0HbBkZAZjbOtt86zb0rF1XYFweiQv9vkF70ocJ_luFmxB16HSj41B8"
+              />
+              <button
+                type="button"
+                data-vault-quick-checkout="na-hoodie"
+                class="absolute bottom-4 left-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps py-3 min-h-[44px] opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity brutal-shadow hover:bg-tertiary-fixed-dim hover:text-primary"
+              >
+                QUICK ADD
+              </button>
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-label-caps text-label-caps text-primary">
+                  HEAVYWEIGHT HOODIE
+                </h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  MATTE BLACK
+                </p>
+              </div>
+              <span class="font-headline-md text-headline-md text-primary tabular-nums"
+                >PHP 10,500</span
+              >
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div
+            class="border-b-2 sm:border-b-0 lg:border-r-2 border-primary p-stack-sm flex flex-col bg-surface hover:bg-surface-container-highest transition-colors relative"
+          >
+            <div
+              class="absolute top-8 left-8 z-10 bg-tertiary-fixed-dim text-primary font-label-caps text-label-caps px-2 py-1 brutal-border"
+            >
+              LIMITED
+            </div>
+            <div
+              class="bg-surface-container-low aspect-square mb-stack-sm border-2 border-transparent hover:border-primary transition-colors relative group"
+            >
+              <img
+                class="w-full h-full object-cover mix-blend-luminosity"
+                data-alt="A product shot of a highly structured, utilitarian vest jacket in off-white. The piece features numerous cargo pockets and rigid geometric lines. Shot flat lay on a stark black background, creating intense contrast. Neo-brutalist apparel presentation."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbk9eSPo9MjSpg-cEAnlnZS4tHT-uquxWbOjTRmTOTkqVGi9ruZs7hR7NIivc8agAj-jw_MbdpD6JeAz_Yu3EqK272Sc2naNi3b_fDmVgJmi2DwMfc3VEw7WycBwBSJ-tHDq5Ma0lJUOimYFj1vQRT4LU5BSxS6rO2XqmoGz8Hu-eJVtCo-5J_NJoTfw4nqL2s8JLQHCSq5P18BIVFQPxAUIs9rWE3jl18OP5e7qWCTzqqstZprr5DbIaqWQvVWjdA8BKfoXMWEMg"
+              />
+              <button
+                type="button"
+                data-vault-quick-checkout="na-vest"
+                class="absolute bottom-4 left-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps py-3 min-h-[44px] opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity brutal-shadow hover:bg-tertiary-fixed-dim hover:text-primary"
+              >
+                QUICK ADD
+              </button>
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-label-caps text-label-caps text-primary">
+                  UTILITY VEST 02
+                </h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  CONCRETE
+                </p>
+              </div>
+              <span class="font-headline-md text-headline-md text-primary tabular-nums"
+                >PHP 13,800</span
+              >
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div
+            class="border-b-2 sm:border-b-0 sm:border-r-2 lg:border-b-0 border-primary p-stack-sm flex flex-col bg-surface hover:bg-surface-container-highest transition-colors"
+          >
+            <div
+              class="bg-surface-container-low aspect-square mb-stack-sm border-2 border-transparent hover:border-primary transition-colors relative group"
+            >
+              <img
+                class="w-full h-full object-cover mix-blend-luminosity"
+                data-alt="A tight crop of a heavyweight cotton t-shirt in stark black. The focus is on the thick ribbed collar and the rigid drop-shoulder seam. The lighting is direct and unforgiving, highlighting the premium texture of the streetwear garment against a raw concrete surface."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVkqUdXg4-Kb-PC-O2atZXcov3X6BefX4UlCokklMn1GG2wDsZjoh9odqmNT0XXoJLAYT4J8OlRn24hVvaPzlDzXJz61HdSeyHl3w0mblEc0uIdCmPstyEQSYd-_aPMdiqe01vXBdCXxBS7DpdP1muKj234DHO0TVLmVP77zVUIryyKXxL-TMa5Vrmg5Jkh2sOQ0nkKKXArwXghDHi-nJz_hGBHqw5deGHBiEXAiZyaoiU3E4ow3nzZW-FzKZPMjcI7YQb2knsebs"
+              />
+              <button
+                type="button"
+                data-vault-quick-checkout="na-tee"
+                class="absolute bottom-4 left-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps py-3 min-h-[44px] opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity brutal-shadow hover:bg-tertiary-fixed-dim hover:text-primary"
+              >
+                QUICK ADD
+              </button>
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-label-caps text-label-caps text-primary">
+                  OVERSIZED TEE
+                </h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  MATTE BLACK
+                </p>
+              </div>
+              <span class="font-headline-md text-headline-md text-primary tabular-nums"
+                >PHP 4,900</span
+              >
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div
+            class="p-stack-sm flex flex-col bg-surface hover:bg-surface-container-highest transition-colors"
+          >
+            <div
+              class="bg-surface-container-low aspect-square mb-stack-sm border-2 border-transparent hover:border-primary transition-colors relative group"
+            >
+              <img
+                class="w-full h-full object-cover mix-blend-luminosity"
+                data-alt="A minimalist presentation of wide-leg, architectural trousers in dark charcoal. The pants are styled flat on a white surface, showing off the stiff pleats and heavy drape of the fabric. High contrast black and white lighting typical of a neo-brutalist fashion editorial."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCi2v2mOCasOpLNP_AQ1_Qht1fxNBM5qPH_J6lllrfISHJZm1bBCKaXKlzuI6FO00JVaiWpx0POsDg_oL_3UOZlQSrNlVkhaeeBfg9cpGLoGBA5MHl1QV49v-MyWxbB5S-8-6zns4wwGzjLLTuRKLttg6EWzH72Yvkas6NPh6DvTJzvg6h0gwCHu04E5pyFDTu2Es8zeZ5hbUBMmQyABAjI1UL15Too7x0wyTlkypK4F3VgATexFXNfJbMjqk6MhBIYR6TuxsQlW0"
+              />
+              <button
+                type="button"
+                data-vault-quick-checkout="na-trouser"
+                class="absolute bottom-4 left-4 right-4 bg-primary text-on-primary font-label-caps text-label-caps py-3 min-h-[44px] opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity brutal-shadow hover:bg-tertiary-fixed-dim hover:text-primary"
+              >
+                QUICK ADD
+              </button>
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-label-caps text-label-caps text-primary">
+                  WIDE LEG TROUSER
+                </h4>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  CHARCOAL
+                </p>
+              </div>
+              <span class="font-headline-md text-headline-md text-primary tabular-nums"
+                >PHP 12,100</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Newsletter / Footer Prep -->
+      <section class="grid grid-cols-1 md:grid-cols-2">
+        <div
+          class="p-grid-margin border-b-2 md:border-b-0 md:border-r-2 border-primary flex flex-col justify-center bg-surface-container-lowest"
+        >
+          <h3
+            class="font-headline-lg text-headline-lg text-primary mb-stack-sm"
+          >
+            JOIN THE<br />REGISTRY
+          </h3>
+          <p
+            class="font-body-md text-body-md text-on-surface-variant mb-stack-md"
+          >
+            Access to limited releases, architectural studies, and private vault
+            sales.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-4">
+            <input
+              class="font-label-caps text-label-caps bg-transparent brutal-border p-4 w-full focus:outline-none focus:border-tertiary-fixed-dim focus:ring-0 placeholder:text-outline-variant"
+              placeholder="EMAIL ADDRESS"
+              type="email"
+            />
+            <button
+              class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 brutal-shadow hover:bg-tertiary-fixed-dim hover:text-primary transition-colors whitespace-nowrap"
+              type="button"
+            >
+              SUBMIT
+            </button>
+          </form>
+        </div>
+        <div
+          class="bg-primary p-grid-margin flex items-center justify-center min-h-[400px] relative overflow-hidden"
+        >
+          <span
+            class="material-symbols-outlined text-[300px] text-surface opacity-10 absolute -right-10 -bottom-10 mix-blend-overlay"
+            >architecture</span
+          >
+          <blockquote
+            class="relative z-10 font-headline-md text-headline-md text-on-primary max-w-sm text-center"
+          >
+            "FORM FOLLOWS FUNCTION. THEN WE BREAK THE FORM."
+          </blockquote>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface text-primary font-label-caps text-label-caps font-body-md text-body-md full-width bottom border-t-4 border-primary flat no shadows grid grid-cols-1 md:grid-cols-12 gap-grid-gutter w-full px-grid-margin py-stack-lg Static architectural layout with high contrast"
+    >
+      <div class="md:col-span-4 flex flex-col justify-between h-full">
+        <div
+          class="font-headline-md text-headline-md font-bold text-primary mb-stack-sm"
+        >
+          VAULT PH
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+          © 2024 VAULT PH. ALL RIGHTS RESERVED. FASHION STREETWEAR
+          REGISTRY.
+        </p>
+      </div>
+      <div class="md:col-span-2 flex flex-col gap-4 mt-stack-md md:mt-0">
+        <h5
+          class="text-on-surface-variant mb-2 border-b-2 border-primary inline-block w-max pb-1"
+        >
+          NAVIGATION
+        </h5>
+        <a
+          class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+          href="collections.html"
+          >EDITIONS</a
+        >
+        <a
+          class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+          href="archive.html"
+          >THE VAULT</a
+        >
+        <a
+          class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+          href="#"
+          >SHIPPING</a
+        >
+      </div>
+      <div class="md:col-span-2 flex flex-col gap-4 mt-stack-md md:mt-0">
+        <h5
+          class="text-on-surface-variant mb-2 border-b-2 border-primary inline-block w-max pb-1"
+        >
+          SUPPORT
+        </h5>
+        <a
+          class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+          href="#"
+          >RETURNS</a
+        >
+        <a
+          class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+          href="#"
+          >CONTACT</a
+        >
+        <a
+          class="text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors"
+          href="#"
+          >PRIVACY</a
+        >
+      </div>
+      <div
+        class="md:col-span-4 flex flex-col items-start md:items-end mt-stack-lg md:mt-0 justify-end h-full"
+      >
+        <div class="flex gap-4">
+          <span
+            class="material-symbols-outlined text-primary hover:text-tertiary-fixed-dim cursor-pointer transition-colors text-3xl"
+            >public</span
+          >
+          <span
+            class="material-symbols-outlined text-primary hover:text-tertiary-fixed-dim cursor-pointer transition-colors text-3xl"
+            >mail</span
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./catalog-data.js" defer></script>
+    <script src="./vault-stack.js" defer></script>
+    <script src="./index-new-arrivals.js" defer></script>
+    <script src="./index-hero-typewriter.js" defer></script>
+  </body>
+</html>

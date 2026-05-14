@@ -69,6 +69,18 @@
       hero.alt = p.name;
     }
 
+    var zoomBtn = document.getElementById("detail-hero-zoom");
+    if (zoomBtn && !zoomBtn.dataset.detailZoomWired) {
+      zoomBtn.dataset.detailZoomWired = "1";
+      zoomBtn.addEventListener("click", function () {
+        var on = zoomBtn.getAttribute("aria-pressed") === "true";
+        zoomBtn.setAttribute("aria-pressed", on ? "false" : "true");
+      });
+    }
+    if (zoomBtn) {
+      zoomBtn.setAttribute("aria-pressed", "false");
+    }
+
     var badge = document.getElementById("detail-badge");
     if (badge) {
       if (p.tag) {
@@ -77,14 +89,14 @@
             ? "bg-primary text-on-primary border-[1px] border-primary"
             : "bg-tertiary-fixed-dim text-primary border-[1px] border-primary";
         badge.className =
-          "absolute top-4 left-4 px-3 py-1 font-label-caps text-label-caps border-[1px] border-primary shadow-[2px_2px_0px_#000000] " +
+          "pointer-events-none absolute left-4 top-4 z-10 px-3 py-1 font-label-caps text-label-caps border-[1px] border-primary shadow-[2px_2px_0px_#000000] " +
           bCls;
         badge.textContent = p.tag;
         badge.classList.remove("hidden");
       } else {
         badge.textContent = "";
         badge.className =
-          "absolute top-4 left-4 px-3 py-1 font-label-caps text-label-caps border-[1px] border-primary shadow-[2px_2px_0px_#000000] hidden";
+          "pointer-events-none absolute left-4 top-4 z-10 px-3 py-1 font-label-caps text-label-caps border-[1px] border-primary shadow-[2px_2px_0px_#000000] hidden";
       }
     }
 
@@ -159,9 +171,14 @@
 
     var checkout = document.getElementById("detail-checkout-btn");
     if (checkout) {
-      checkout.onclick = function () {
-        window.location.href = "checkout.html?id=" + encodeURIComponent(p.id);
-      };
+      checkout.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (window.VaultStack && typeof window.VaultStack.addAndGoToShop === "function") {
+          window.VaultStack.addAndGoToShop(p.id);
+        } else {
+          window.location.href = "collections.html#stack-drawer";
+        }
+      });
     }
 
     var rel = document.getElementById("detail-related-grid");

@@ -4,6 +4,60 @@
  */
 window.VAULT_PRODUCTS = [
   {
+    id: "na-hoodie",
+    name: "HEAVYWEIGHT HOODIE",
+    price: 10500,
+    category: "tops",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["black"],
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAoaDeHYiok9I9AWbXszJUGIiOYIAXmWBzDl6HanjVV53bTjiClmKlW5LswHTaT7sD6pR8tlwQK51WNKCeLXiH_iYEuahvprQ0Uq2d181Kr4j4-HYE07WqIxm6tVbiBIEo6aODpolpsMzFpy84EvpQG4jreDCW8m15VuVjt9-fLfpo-NULOuIPzhGmqhlUueEl0TnxKxzJOsf6Tskos1t9ob0HbBkZAZjbOtt86zb0rF1XYFweiQv9vkF70ocJ_luFmxB16HSj41B8",
+    createdAt: "2026-05-12",
+    description:
+      "Rigid boxy cut and a dense matte black shell. Heavy fleece interior, architectural seams, and a hood that holds its own silhouette—built as a structural layer, not a soft basic.",
+  },
+  {
+    id: "na-vest",
+    name: "UTILITY VEST 02",
+    price: 13800,
+    category: "outerwear",
+    sizes: ["M", "L", "XL"],
+    colors: ["charcoal", "white"],
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCbk9eSPo9MjSpg-cEAnlnZS4tHT-uquxWbOjTRmTOTkqVGi9ruZs7hR7NIivc8agAj-jw_MbdpD6JeAz_Yu3EqK272Sc2naNi3b_fDmVgJmi2DwMfc3VEw7WycBwBSJ-tHDq5Ma0lJUOimYFj1vQRT4LU5BSxS6rO2XqmoGz8Hu-eJVtCo-5J_NJoTfw4nqL2s8JLQHCSq5P18BIVFQPxAUIs9rWE3jl18OP5e7qWCTzqqstZprr5DbIaqWQvVWjdA8BKfoXMWEMg",
+    createdAt: "2026-05-11",
+    tag: "LIMITED",
+    tagVariant: "limited",
+    description:
+      "Concrete-toned shell with modular cargo pockets and rigid geometry. Shot for high contrast against black—utility as architecture, every seam load-bearing.",
+  },
+  {
+    id: "na-tee",
+    name: "OVERSIZED TEE",
+    price: 4900,
+    category: "tops",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["black"],
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBVkqUdXg4-Kb-PC-O2atZXcov3X6BefX4UlCokklMn1GG2wDsZjoh9odqmNT0XXoJLAYT4J8OlRn24hVvaPzlDzXJz61HdSeyHl3w0mblEc0uIdCmPstyEQSYd-_aPMdiqe01vXBdCXxBS7DpdP1muKj234DHO0TVLmVP77zVUIryyKXxL-TMa5Vrmg5Jkh2sOQ0nkKKXArwXghDHi-nJz_hGBHqw5deGHBiEXAiZyaoiU3E4ow3nzZW-FzKZPMjcI7YQb2knsebs",
+    createdAt: "2026-05-10",
+    description:
+      "Oversized block with a thick rib and dead-flat face. Matte black on matte black—maximum negative space, minimum noise, heavy cotton hand.",
+  },
+  {
+    id: "na-trouser",
+    name: "WIDE LEG TROUSER",
+    price: 12100,
+    category: "bottoms",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["charcoal"],
+    image:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDCi2v2mOCasOpLNP_AQ1_Qht1fxNBM5qPH_J6lllrfISHJZm1bBCKaXKlzuI6FO00JVaiWpx0POsDg_oL_3UOZlQSrNlVkhaeeBfg9cpGLoGBA5MHl1QV49v-MyWxbB5S-8-6zns4wwGzjLLTuRKLttg6EWzH72Yvkas6NPh6DvTJzvg6h0gwCHu04E5pyFDTu2Es8zeZ5hbUBMmQyABAjI1UL15Too7x0wyTlkypK4F3VgATexFXNfJbMjqk6MhBIYR6TuxsQlW0",
+    createdAt: "2026-05-09",
+    description:
+      "Wide leg, stiff pleat, and a charcoal drape that reads industrial. Grounded silhouette with a pressed center line—trousers as plinth, not drape.",
+  },
+  {
     id: "p1",
     name: "OBSIDIAN ANORAK",
     price: 12500,

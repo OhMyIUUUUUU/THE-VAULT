@@ -33,22 +33,60 @@
         class="max-w-[1440px] mx-auto px-grid-margin py-4 flex justify-between items-center"
       >
         <a
-          class="font-headline-md text-headline-md font-bold tracking-tighter text-primary"
-          href="index.html"
-          >VAULT PH</a
-        >
+          class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90"
+          href="./home.html"
+          >VAULT PH</a>
         <div
-          class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-2"
+          class="font-label-caps text-label-caps text-on-surface-variant flex flex-wrap items-center justify-end gap-x-2 sm:gap-x-3 gap-y-1"
         >
-          <span class="material-symbols-outlined text-[20px]">lock</span> SECURE
-          CHECKOUT
+          <a
+            href="profile.html"
+            class="hidden sm:inline-flex font-label-caps text-label-caps uppercase text-primary underline decoration-1 underline-offset-2 hover:text-tertiary-fixed-dim min-h-[44px] items-center"
+            >Profile</a
+          >
+          <a
+          href="profile.html"
+          class="inline-flex items-center justify-center min-h-[44px] min-w-[44px] text-primary hover:bg-primary hover:text-on-primary transition-colors no-underline"
+          aria-label="Profile"
+          >
+            <span class="material-symbols-outlined">person</span>
+          </a>
+          <a
+            href="checkout.html"
+            class="relative inline-flex items-center justify-center text-primary hover:text-tertiary-fixed-dim transition-colors min-h-[44px] min-w-[44px]"
+            aria-label="Checkout"
+          >
+            <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+            <span
+              class="vault-stack-badge hidden absolute top-0.5 right-0.5 min-w-[1.125rem] h-[1.125rem] px-0.5 flex items-center justify-center bg-primary text-on-primary text-[10px] leading-none border border-primary font-label-caps"
+              aria-hidden="true"
+              >0</span
+            >
+          </a>
+          <span class="hidden sm:inline text-on-surface-variant">|</span>
+          <span class="inline-flex items-center gap-1 uppercase tracking-wide">
+            <span class="material-symbols-outlined text-[20px]">lock</span> SECURE
+            CHECKOUT
+          </span>
         </div>
       </div>
     </header>
     <!-- Main Content -->
     <main
-      class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-grid-margin py-8 md:py-12"
+      class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-grid-margin py-8 md:py-12 flex flex-col"
     >
+      <a
+        href="collections.html#stack-drawer"
+        class="group self-start inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-wider text-primary border-[2px] border-primary bg-surface px-3 py-2.5 min-h-[44px] hover:bg-primary hover:text-on-primary transition-colors duration-100 no-underline mb-6 md:mb-8"
+        aria-label="Back to shop and pull stack"
+      >
+        <span
+          class="material-symbols-outlined text-[1.35rem] leading-none"
+          aria-hidden="true"
+          >arrow_back</span
+        >
+        <span class="uppercase">Back to shop</span>
+      </a>
       <div
         class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-grid-gutter lg:border-[2px] lg:border-primary lg:bg-surface"
       >
@@ -68,7 +106,9 @@
             <div class="flex flex-col gap-4 mt-2">
               <div class="flex justify-between items-end mb-2">
                 <span class="font-body-md text-body-md font-bold">Account</span>
-                <a class="font-label-caps text-label-caps underline" href="#"
+                <a
+                  class="font-label-caps text-label-caps underline"
+                  href="sign-in.html"
                   >Log in</a
                 >
               </div>
@@ -77,6 +117,7 @@
                   >Email or Mobile Phone Number</label
                 >
                 <input
+                  id="checkout-contact-email"
                   class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px] transition-all"
                   placeholder="Enter contact info"
                   type="text"
@@ -109,9 +150,13 @@
                   >Country/Region</label
                 >
                 <select
+                  id="checkout-shipping-country"
                   class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px] appearance-none rounded-none"
                 >
-                  <option>Philippines</option>
+                  <option value="PH">Philippines</option>
+                  <option value="US">United States</option>
+                  <option value="SG">Singapore</option>
+                  <option value="JP">Japan</option>
                 </select>
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -120,6 +165,7 @@
                     >First Name</label
                   >
                   <input
+                    id="checkout-shipping-first"
                     class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
                     placeholder="First Name"
                     type="text"
@@ -130,6 +176,7 @@
                     >Last Name</label
                   >
                   <input
+                    id="checkout-shipping-last"
                     class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
                     placeholder="Last Name"
                     type="text"
@@ -141,6 +188,7 @@
                   >Address</label
                 >
                 <input
+                  id="checkout-shipping-address1"
                   class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
                   placeholder="Street address, building, etc."
                   type="text"
@@ -151,6 +199,7 @@
                   >Apartment, suite, etc. (optional)</label
                 >
                 <input
+                  id="checkout-shipping-address2"
                   class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
                   type="text"
                 />
@@ -161,6 +210,7 @@
                     >City</label
                   >
                   <input
+                    id="checkout-shipping-city"
                     class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
                     placeholder="City"
                     type="text"
@@ -171,11 +221,12 @@
                     >Region/Province</label
                   >
                   <select
+                    id="checkout-shipping-region"
                     class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px] appearance-none rounded-none"
                   >
-                    <option>Metro Manila</option>
-                    <option>Cebu</option>
-                    <option>Davao</option>
+                    <option value="Metro Manila">Metro Manila</option>
+                    <option value="Cebu">Cebu</option>
+                    <option value="Davao">Davao</option>
                   </select>
                 </div>
                 <div class="relative w-full md:col-span-1">
@@ -183,6 +234,7 @@
                     >Postal Code</label
                   >
                   <input
+                    id="checkout-shipping-postal"
                     class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md focus:outline-none focus:border-[4px]"
                     placeholder="ZIP"
                     type="text"
@@ -204,7 +256,7 @@
               All transactions are secure and encrypted.
             </p>
             <div
-              class="flex flex-col border-[2px] border-primary bg-surface-container-lowest"
+              class="flex flex-col border-[2px] border-primary bg-[#FAF9F9]"
             >
               <!-- GCash -->
               <label
@@ -223,9 +275,18 @@
                   >
                 </div>
                 <div
-                  class="w-12 h-8 bg-blue-500 flex items-center justify-center border-[1px] border-primary"
+                  class="flex h-9 min-w-[4.5rem] max-w-[6.5rem] shrink-0 items-center justify-center border-[1px] border-primary bg-white px-2"
                 >
-                  <span class="text-white text-xs font-bold">G</span>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/52/GCash_logo.svg"
+                    alt="GCash"
+                    class="max-h-7 w-full max-w-full object-contain object-center"
+                    width="120"
+                    height="32"
+                    loading="lazy"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                  />
                 </div>
               </label>
               <!-- Maya -->
@@ -244,9 +305,18 @@
                   >
                 </div>
                 <div
-                  class="w-12 h-8 bg-green-500 flex items-center justify-center border-[1px] border-primary"
+                  class="flex h-9 min-w-[4.5rem] max-w-[6.5rem] shrink-0 items-center justify-center border-[1px] border-primary bg-white px-2"
                 >
-                  <span class="text-white text-xs font-bold">M</span>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Maya_logo.svg"
+                    alt="Maya"
+                    class="max-h-6 w-full max-w-full object-contain object-center"
+                    width="148"
+                    height="43"
+                    loading="lazy"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                  />
                 </div>
               </label>
               <!-- GrabPay -->
@@ -265,9 +335,18 @@
                   >
                 </div>
                 <div
-                  class="w-12 h-8 bg-black flex items-center justify-center border-[1px] border-primary"
+                  class="flex h-9 min-w-[4.5rem] max-w-[6.5rem] shrink-0 items-center justify-center border-[1px] border-primary bg-white px-2"
                 >
-                  <span class="text-white text-xs font-bold">GP</span>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Grab_Logo.svg"
+                    alt="GrabPay"
+                    class="max-h-7 w-full max-w-full object-contain object-center"
+                    width="120"
+                    height="36"
+                    loading="lazy"
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                  />
                 </div>
               </label>
               <!-- Online Banking -->
@@ -314,8 +393,7 @@
           <div class="block lg:hidden mt-4">
             <button
               type="button"
-              onclick="window.location.href='collections.html'"
-              class="w-full bg-primary text-on-primary py-4 px-6 font-label-caps text-label-caps uppercase neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all border-[2px] border-primary flex justify-center items-center gap-2"
+              class="js-checkout-place-order w-full bg-primary text-on-primary py-4 px-6 font-label-caps text-label-caps uppercase neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all border-[2px] border-primary flex justify-center items-center gap-2"
             >
               PLACE ORDER
               <span class="material-symbols-outlined text-[18px]"
@@ -326,85 +404,24 @@
         </div>
         <!-- Column 2: Order Summary -->
         <div
-          class="lg:col-span-5 bg-surface-container-low p-0 lg:p-8 flex flex-col gap-6"
+          class="lg:col-span-5 bg-surface-container-low p-0 lg:p-8 flex flex-col gap-6 min-h-0"
         >
           <h2
             class="font-headline-md text-headline-md font-bold hidden lg:block"
           >
             ORDER SUMMARY
           </h2>
-          <!-- Cart Items -->
-          <div class="flex flex-col gap-4 border-b-[2px] border-primary pb-6">
-            <!-- Item 1 -->
-            <div class="flex gap-4 items-start relative group">
-              <div
-                class="w-24 h-24 border-[2px] border-primary bg-surface overflow-hidden relative"
-              >
-                <div
-                  class="absolute -top-2 -right-2 bg-primary text-on-primary w-6 h-6 flex items-center justify-center font-label-caps text-[10px] rounded-full z-10"
-                >
-                  1
-                </div>
-                <img
-                  alt="Product thumbnail"
-                  class="w-full h-full object-cover grayscale mix-blend-multiply"
-                  data-alt="A stylized, high-contrast flat lay of a dark, structured streetwear hoodie on a stark white background. The image has a raw, neo-brutalist aesthetic with hard shadows. The lighting is harsh and direct, emphasizing the texture of the fabric. The overall mood is edgy, premium, and industrial."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfDHyK6nyx_s7t28wfnuAmuIS5oFtco4pacb14NJmqzsZSPtMKA4yF6jGq-SsdVrYvcLpEj3ug3VD_wPW-v4pIL6G16TsKsde6e3QJlxldGodSpq3l9rdslPh6wP3x1gRNDd1yHkVKbXBtyJB_bpD27tL6vvgpYD0u9375FyEcVRGnK7XyF0uFI1fbpO7MBCXPsCuLDlio_NKZHrthR18Vli6qTJmWoDvX0Ht656H2hMhf43GkZkkQnJqAUpf5N7VqDO0cDAHYRHU"
-                />
-              </div>
-              <div class="flex-grow flex flex-col justify-between h-full pt-1">
-                <div>
-                  <h3
-                    class="font-label-caps text-label-caps font-bold uppercase"
-                  >
-                    OBSIDIAN ANORAK
-                  </h3>
-                  <p
-                    class="font-body-md text-body-md text-on-surface-variant text-sm mt-1"
-                  >
-                    Size: L / Color: Matte Black
-                  </p>
-                </div>
-                <div class="font-label-caps text-label-caps font-bold mt-2">
-                  ₱ 8,500
-                </div>
-              </div>
-            </div>
-            <!-- Item 2 -->
-            <div class="flex gap-4 items-start relative group">
-              <div
-                class="w-24 h-24 border-[2px] border-primary bg-surface overflow-hidden relative"
-              >
-                <div
-                  class="absolute -top-2 -right-2 bg-primary text-on-primary w-6 h-6 flex items-center justify-center font-label-caps text-[10px] rounded-full z-10"
-                >
-                  2
-                </div>
-                <img
-                  alt="Product thumbnail"
-                  class="w-full h-full object-cover grayscale mix-blend-multiply"
-                  data-alt="A close-up studio shot of heavy, structured streetwear cargo pants in dark grey. Photographed against a plain off-white surface with strong, directional lighting creating sharp cast shadows. The aesthetic is raw and architectural, focusing on the utilitarian details like pockets and seams."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuATzljn7T5UInzbNkhoGNfgK5GVZ2SMiyMaJZ3i6vO68tC8omZ2aGIGvIHEDdLFrhowfWW5zYxPi_mTYENXQP2pFX9ZjPeZdf5yiU9JHZsLXLrdvrCM1ylMEHdmoFgWIbwWQg-RPjY1B-exKXbi0gKSFiXq5I34abqI40MPZWW6ACL4-Uq9HWkGgN9dc2C83dI_mvJLlv5wGvw93yUYCqvRbAoEm7wWYSLIqCyS61OiW8ln-qHzEhhxLCClS_ciOBg-IhdqrIKqHHI"
-                />
-              </div>
-              <div class="flex-grow flex flex-col justify-between h-full pt-1">
-                <div>
-                  <h3
-                    class="font-label-caps text-label-caps font-bold uppercase"
-                  >
-                    TECTONIC CARGO PANT
-                  </h3>
-                  <p
-                    class="font-body-md text-body-md text-on-surface-variant text-sm mt-1"
-                  >
-                    Size: 32 / Color: Concrete
-                  </p>
-                </div>
-                <div class="font-label-caps text-label-caps font-bold mt-2">
-                  ₱ 6,200
-                </div>
-              </div>
-            </div>
+          <!-- Cart items from pull stack (checkout-order.js); scrolls when ~4+ rows -->
+          <div
+            class="border-b-[2px] border-primary pb-6 min-h-0 shrink-0"
+            role="region"
+            aria-label="Items in your order"
+          >
+            <div
+              id="checkout-order-items"
+              class="flex flex-col gap-4 overflow-y-auto overscroll-y-contain max-h-[min(22.5rem,50vh)] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+              aria-live="polite"
+            ></div>
           </div>
           <!-- Discount Code -->
           <div class="flex gap-2">
@@ -425,7 +442,9 @@
           >
             <div class="flex justify-between">
               <span class="text-on-surface-variant">Subtotal</span>
-              <span class="font-bold">₱ 20,900</span>
+              <span id="checkout-summary-subtotal" class="font-bold tabular-nums"
+                >₱ 0</span
+              >
             </div>
             <div class="flex justify-between">
               <span class="text-on-surface-variant">Shipping</span>
@@ -436,7 +455,7 @@
             </div>
             <div class="flex justify-between">
               <span class="text-on-surface-variant">Estimated VAT (12%)</span>
-              <span>₱ 2,508</span>
+              <span id="checkout-summary-vat" class="tabular-nums">₱ 0</span>
             </div>
           </div>
           <div
@@ -446,16 +465,17 @@
               class="font-label-caps text-label-caps font-bold text-lg uppercase"
               >Total</span
             >
-            <span class="font-headline-md text-headline-md font-bold"
-              >₱ 23,408</span
+            <span
+              id="checkout-summary-total"
+              class="font-headline-md text-headline-md font-bold tabular-nums"
+              >₱ 0</span
             >
           </div>
           <!-- Desktop Action -->
           <div class="hidden lg:block mt-6">
             <button
               type="button"
-              onclick="window.location.href='collections.html'"
-              class="w-full bg-primary text-on-primary py-5 px-6 font-headline-md text-[24px] uppercase neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all border-[2px] border-primary flex justify-center items-center gap-3"
+              class="js-checkout-place-order w-full bg-primary text-on-primary py-5 px-6 font-headline-md text-[24px] uppercase neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all border-[2px] border-primary flex justify-center items-center gap-3"
             >
               PLACE ORDER
               <span class="material-symbols-outlined text-[28px]"
@@ -630,5 +650,110 @@
         </div>
       </div>
     </div>
+    <!-- Place order: confirm + delivered -->
+    <div
+      id="checkout-confirm-root"
+      class="checkout-overlay fixed inset-0 z-[100] hidden items-center justify-center p-4"
+      aria-hidden="true"
+    >
+      <div
+        class="checkout-overlay-backdrop absolute inset-0 w-full h-full bg-primary/35 backdrop-blur-[2px] cursor-default"
+        data-checkout-confirm-dismiss
+        tabindex="-1"
+        aria-hidden="true"
+      ></div>
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="checkout-confirm-title"
+        class="relative z-10 w-full max-w-md border-[2px] border-primary bg-surface p-6 md:p-8 neo-shadow"
+      >
+        <h2
+          id="checkout-confirm-title"
+          class="font-headline-md text-headline-md font-bold text-primary uppercase tracking-tight mb-3"
+        >
+          Place this order?
+        </h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+          We will queue your stack for fulfillment. You can cancel here or
+          <span class="text-primary font-semibold">PROCEED</span> to confirm.
+        </p>
+        <div class="flex flex-col-reverse sm:flex-row gap-3 sm:justify-end">
+          <button
+            type="button"
+            id="checkout-confirm-cancel"
+            class="font-label-caps text-label-caps uppercase border-[2px] border-primary bg-surface text-primary py-3 px-6 min-h-[48px] hover:bg-primary hover:text-on-primary transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            id="checkout-confirm-proceed"
+            class="font-label-caps text-label-caps uppercase border-[2px] border-primary bg-primary text-on-primary py-3 px-6 min-h-[48px] neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all"
+          >
+            PROCEED
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="checkout-delivered-root"
+      class="checkout-overlay checkout-delivered-root fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-surface/90"
+      aria-hidden="true"
+    >
+      <div
+        class="checkout-delivered-scene relative w-full max-w-lg border-[2px] border-primary bg-[#FAF9F9] p-8 md:p-10 neo-shadow text-center overflow-hidden"
+        role="status"
+        aria-live="polite"
+      >
+        <div
+          class="checkout-delivered-track relative h-28 mb-8 flex items-center justify-center border-b-[2px] border-primary bg-surface-container-lowest overflow-hidden"
+        >
+          <div class="checkout-delivered-road absolute bottom-3 left-0 right-0 h-0 border-t-2 border-dashed border-primary opacity-60"></div>
+          <div class="checkout-delivered-rocket-wrap inline-flex items-center justify-center" aria-hidden="true">
+            <span
+              class="checkout-delivered-rocket material-symbols-outlined text-6xl md:text-7xl text-primary"
+              >rocket_launch</span
+            >
+          </div>
+          <span
+            class="checkout-delivered-package material-symbols-outlined text-4xl text-primary absolute bottom-5 right-[18%] opacity-0"
+            aria-hidden="true"
+            >package_2</span
+          >
+        </div>
+        <div class="checkout-delivered-check-wrap mb-4 flex justify-center">
+          <span
+            class="checkout-delivered-check material-symbols-outlined text-5xl text-primary fill"
+            aria-hidden="true"
+            >check_circle</span
+          >
+        </div>
+        <h2
+          class="checkout-delivered-title checkout-delivered-fade checkout-delivered-fade--title font-headline-md text-headline-md font-bold text-primary uppercase tracking-tight mb-2"
+        >
+          Thank you for your purchase!
+        </h2>
+        <p
+          class="checkout-delivered-fade checkout-delivered-fade--late font-body-md text-body-md text-on-surface-variant mb-8 max-w-md mx-auto leading-relaxed"
+        >
+          Your Vault PH order is confirmed and marked complete. Thank you for
+          shopping with us.
+        </p>
+        <a
+          href="collections.html"
+          class="checkout-delivered-fade checkout-delivered-fade--btn inline-flex items-center justify-center gap-2 font-label-caps text-label-caps uppercase border-[2px] border-primary bg-primary text-on-primary py-3 px-8 min-h-[48px] neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all no-underline"
+        >
+          Continue shopping
+          <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+    <script src="./vault-auth-store.js"></script>
+    <script src="./catalog-data.js" defer></script>
+    <script src="./vault-stack.js" defer></script>
+    <script src="./checkout-order.js" defer></script>
+    <script src="./checkout-place-order.js" defer></script>
+    <script src="./vault-account-ui.js" defer></script>
   </body>
 </html>

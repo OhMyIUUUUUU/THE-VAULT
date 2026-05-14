@@ -1,0 +1,258 @@
+<!-- Vault PH — Sign up -->
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vault PH — Create account</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./logic.js"></script>
+  </head>
+  <body
+    class="vault-auth-page vault-auth-page--signup text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-tertiary-fixed-dim selection:text-primary"
+  >
+    <main
+      class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-grid-margin py-10 md:py-16 flex flex-col items-center justify-center"
+    >
+      <div
+        class="relative w-full max-w-lg border-[2px] border-primary bg-[#FAF9F9] p-8 md:p-10 neo-shadow"
+      >
+        <div
+          class="absolute -top-3 left-4 bg-[#FAF9F9] px-2 border-[2px] border-primary font-label-caps text-label-caps uppercase"
+        >
+          Join the registry
+        </div>
+        <h1
+          class="font-headline-md text-headline-md font-bold text-primary uppercase tracking-tight mb-1 mt-6"
+        >
+          Create account
+        </h1>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+          Open a Vault PH profile to track orders and queue pieces faster.
+        </p>
+
+        <form class="flex flex-col gap-5" action="#" method="post" id="sign-up-form">
+          <div class="flex flex-col gap-1">
+            <label class="font-label-caps text-label-caps text-primary" for="signup-name"
+              >Full name</label
+            >
+            <input
+              id="signup-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+              class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+              placeholder="Name on registry"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-caps text-label-caps text-primary" for="signup-email"
+              >Email</label
+            >
+            <input
+              id="signup-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-caps text-label-caps text-primary" for="signup-password"
+              >Password</label
+            >
+            <input
+              id="signup-password"
+              name="password"
+              type="password"
+              autocomplete="new-password"
+              required
+              minlength="8"
+              class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+              placeholder="At least 8 characters"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-caps text-label-caps text-primary" for="signup-password2"
+              >Confirm password</label
+            >
+            <input
+              id="signup-password2"
+              name="password2"
+              type="password"
+              autocomplete="new-password"
+              required
+              minlength="8"
+              class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+              placeholder="Repeat password"
+            />
+          </div>
+
+          <div class="border-t-[2px] border-primary pt-5 mt-1 flex flex-col gap-4">
+            <p
+              class="font-label-caps text-label-caps text-primary uppercase tracking-wide mb-1"
+            >
+              Registry address
+            </p>
+            <p class="font-body-md text-sm text-on-surface-variant -mt-2 mb-1 leading-relaxed">
+              Used for deliveries and order confirmations.
+            </p>
+            <div class="flex flex-col gap-1">
+              <label class="font-label-caps text-label-caps text-primary" for="signup-address-line1"
+                >Street address</label
+              >
+              <input
+                id="signup-address-line1"
+                name="addressLine1"
+                type="text"
+                autocomplete="address-line1"
+                required
+                class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+                placeholder="Building, street, barangay"
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="font-label-caps text-label-caps text-primary" for="signup-address-line2"
+                >Unit, floor (optional)</label
+              >
+              <input
+                id="signup-address-line2"
+                name="addressLine2"
+                type="text"
+                autocomplete="address-line2"
+                class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+                placeholder="Apartment, suite, etc."
+              />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-1">
+                <label class="font-label-caps text-label-caps text-primary" for="signup-city"
+                  >City</label
+                >
+                <input
+                  id="signup-city"
+                  name="city"
+                  type="text"
+                  autocomplete="address-level2"
+                  required
+                  class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+                  placeholder="City"
+                />
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="font-label-caps text-label-caps text-primary" for="signup-region"
+                  >Province / region</label
+                >
+                <input
+                  id="signup-region"
+                  name="region"
+                  type="text"
+                  autocomplete="address-level1"
+                  required
+                  class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+                  placeholder="e.g. NCR, Cebu"
+                />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-1">
+                <label class="font-label-caps text-label-caps text-primary" for="signup-postal"
+                  >Postal code</label
+                >
+                <input
+                  id="signup-postal"
+                  name="postalCode"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="postal-code"
+                  required
+                  class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+                  placeholder="ZIP / postal code"
+                />
+              </div>
+              <div class="flex flex-col gap-1">
+                <label class="font-label-caps text-label-caps text-primary" for="signup-country"
+                  >Country</label
+                >
+                <select
+                  id="signup-country"
+                  name="country"
+                  autocomplete="country"
+                  required
+                  class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] appearance-none rounded-none"
+                >
+                  <option value="PH" selected>Philippines</option>
+                  <option value="US">United States</option>
+                  <option value="SG">Singapore</option>
+                  <option value="JP">Japan</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <label
+            class="inline-flex items-start gap-3 cursor-pointer font-body-md text-sm text-on-surface-variant leading-snug"
+            for="signup-newsletter"
+          >
+            <input
+              type="checkbox"
+              id="signup-newsletter"
+              name="newsletter"
+              class="mt-1 h-5 w-5 shrink-0 border-[2px] border-primary bg-surface-container-lowest checked:bg-primary checked:border-primary focus:ring-0"
+            />
+            <span>Email me drops, archive picks, and restock notices (optional).</span>
+          </label>
+
+          <label
+            class="inline-flex items-start gap-3 cursor-pointer font-body-md text-sm text-on-surface-variant leading-snug"
+            for="signup-terms"
+          >
+            <input
+              type="checkbox"
+              id="signup-terms"
+              required
+              class="mt-1 h-5 w-5 shrink-0 border-[2px] border-primary bg-surface-container-lowest checked:bg-primary checked:border-primary focus:ring-0"
+            />
+            <span
+              >I agree to the registry terms and understand this is a demo storefront (no real
+              charges).</span
+            >
+          </label>
+          <button
+            type="submit"
+            class="w-full bg-primary text-on-primary font-label-caps text-label-caps uppercase py-4 border-[2px] border-primary neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all min-h-[48px]"
+          >
+            Create account
+          </button>
+        </form>
+
+        <p class="font-body-md text-body-md text-on-surface-variant mt-8 text-center leading-relaxed">
+          Already on the list?
+          <a
+            href="sign-in.html"
+            class="font-label-caps text-label-caps uppercase text-primary underline decoration-1 underline-offset-2 hover:text-tertiary-fixed-dim"
+            >Sign in</a
+          >
+        </p>
+      </div>
+    </main>
+
+    <footer
+      class="mt-auto border-t-[2px] border-primary bg-surface px-grid-margin py-6 text-center font-label-caps text-label-caps text-on-surface-variant"
+    >
+      © VAULT PH — ARCHITECTURAL STREETWEAR
+    </footer>
+    <script src="./vault-auth-store.js"></script>
+    <script src="./catalog-data.js" defer></script>
+    <script src="./vault-stack.js" defer></script>
+    <script src="./auth-forms.js" defer></script>
+  </body>
+</html>

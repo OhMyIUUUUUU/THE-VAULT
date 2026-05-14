@@ -1,0 +1,264 @@
+<!-- Vault PH — Profile (session) -->
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vault PH — Registry profile</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./logic.js"></script>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-tertiary-fixed-dim selection:text-primary"
+  >
+    <header
+      class="sticky top-0 z-30 border-b-[2px] border-primary bg-surface-container-lowest"
+    >
+      <div
+        class="max-w-[1440px] mx-auto px-4 md:px-grid-margin py-3.5 flex flex-wrap items-center justify-between gap-3"
+      >
+        <a
+          href="home.html"
+          class="font-headline-md text-headline-md font-bold tracking-tighter text-primary no-underline hover:opacity-90"
+          >VAULT PH</a
+        >
+        <nav
+          class="flex flex-wrap items-center gap-1 sm:gap-2 font-label-caps text-label-caps uppercase"
+        >
+          <a
+            href="collections.html"
+            class="text-on-surface-variant hover:bg-primary hover:text-on-primary px-2 py-1.5 min-h-[40px] inline-flex items-center no-underline transition-colors border-[2px] border-transparent hover:border-primary"
+            >Shop</a
+          >
+          <a
+            href="checkout.html"
+            class="text-on-surface-variant hover:bg-primary hover:text-on-primary px-2 py-1.5 min-h-[40px] inline-flex items-center no-underline transition-colors border-[2px] border-transparent hover:border-primary"
+            >Checkout</a
+          >
+          <span
+            class="bg-primary text-on-primary px-2 py-1.5 min-h-[40px] inline-flex items-center border-[2px] border-primary"
+            aria-current="page"
+            >Profile</span
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-grid-margin py-8 md:py-12">
+      <!-- Signed-out -->
+      <div id="profile-guest" class="w-full max-w-4xl mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 border-[2px] border-primary neo-shadow overflow-hidden bg-surface"
+        >
+          <div
+            class="flex flex-col justify-center gap-5 p-8 md:p-12 lg:p-14 bg-primary text-on-primary border-b-[2px] md:border-b-0 md:border-r-[2px] border-primary min-h-[280px]"
+          >
+            <p class="font-label-caps text-label-caps text-on-primary/80 uppercase tracking-[0.2em]">
+              Registry
+            </p>
+            <h1 class="font-headline-md text-headline-md md:text-3xl font-bold uppercase tracking-tight leading-tight">
+              Sign in to open your profile
+            </h1>
+            <p class="font-body-md text-body-md text-on-primary/90 max-w-sm leading-relaxed">
+              Orders, saved pieces, and shipping defaults load here after you authenticate.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <a
+                href="sign-in.html"
+                class="inline-flex items-center justify-center text-center font-label-caps text-label-caps uppercase bg-white text-primary py-3.5 px-6 min-h-[48px] border-[2px] border-white neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all no-underline"
+                >Sign in</a
+              >
+              <a
+                href="sign-up.html"
+                class="inline-flex items-center justify-center text-center font-label-caps text-label-caps uppercase bg-transparent text-on-primary py-3.5 px-6 min-h-[48px] border-[2px] border-white hover:bg-white hover:text-primary transition-colors no-underline"
+                >Create account</a
+              >
+            </div>
+          </div>
+          <div
+            class="flex flex-col items-center justify-center gap-4 p-10 md:p-12 bg-[#FAF9F9] min-h-[240px] md:min-h-0"
+          >
+            <span class="material-symbols-outlined text-primary text-[5rem] md:text-[6.5rem] leading-none" aria-hidden="true"
+              >person_off</span
+            >
+            <p class="font-label-caps text-label-caps text-on-surface-variant uppercase text-center max-w-[14rem]">
+              No active session
+            </p>
+            <a
+              href="home.html"
+              class="font-label-caps text-label-caps uppercase text-primary underline decoration-1 underline-offset-4 hover:text-tertiary-fixed-dim"
+              >Back to home</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Signed-in -->
+      <div id="profile-root" class="hidden w-full max-w-5xl mx-auto flex flex-col gap-8 md:gap-10">
+        <!-- Hero -->
+        <section
+          class="relative border-[2px] border-primary bg-[#FAF9F9] neo-shadow p-6 md:p-10 lg:p-12"
+        >
+          <div class="relative">
+            <div
+              class="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start sm:items-center flex-grow min-w-0"
+            >
+              <div
+                id="profile-avatar-initials"
+                class="flex h-24 w-24 sm:h-28 sm:w-28 shrink-0 items-center justify-center border-[3px] border-primary bg-tertiary-fixed-dim font-headline-md text-2xl sm:text-3xl font-bold uppercase tracking-tight text-primary"
+                aria-hidden="true"
+              >
+                —
+              </div>
+              <div class="min-w-0 flex-grow">
+                <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.14em] mb-2">
+                  Registry member
+                </p>
+                <h1
+                  id="profile-full-name"
+                  class="font-headline-md text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-primary mb-2 break-words"
+                >
+                  —
+                </h1>
+                <p
+                  id="profile-email"
+                  class="font-body-md text-body-md text-on-surface-variant break-all mb-4"
+                >
+                  —
+                </p>
+                <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <span
+                    id="profile-role"
+                    class="inline-flex items-center font-label-caps text-label-caps uppercase px-3 py-1.5 border-[2px] border-primary bg-surface text-primary"
+                    >—</span
+                  >
+                  <span
+                    class="inline-flex items-center gap-1.5 font-body-md text-sm text-on-surface-variant"
+                  >
+                    <span class="material-symbols-outlined text-[1.125rem] text-primary" aria-hidden="true"
+                      >calendar_month</span
+                    >
+                    <span>Member since</span>
+                    <span id="profile-created" class="font-semibold text-primary tabular-nums">—</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">
+          <!-- Main column -->
+          <div class="lg:col-span-7 flex flex-col gap-6 md:gap-8">
+            <section class="relative border-[2px] border-primary bg-surface-container-lowest p-6 md:p-8 neo-shadow">
+              <div
+                class="absolute -top-3 left-4 bg-surface-container-lowest px-2 border-[2px] border-primary font-label-caps text-label-caps uppercase"
+              >
+                Contact
+              </div>
+              <ul class="mt-8 space-y-5">
+                <li class="flex gap-4">
+                  <span
+                    class="flex h-11 w-11 shrink-0 items-center justify-center border-[2px] border-primary bg-[#FAF9F9] text-primary"
+                    aria-hidden="true"
+                  >
+                    <span class="material-symbols-outlined">call</span>
+                  </span>
+                  <div>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-0.5">Phone</p>
+                    <p id="profile-phone" class="font-body-md text-body-md text-primary font-medium">—</p>
+                  </div>
+                </li>
+                <li class="flex gap-4">
+                  <span
+                    class="flex h-11 w-11 shrink-0 items-center justify-center border-[2px] border-primary bg-[#FAF9F9] text-primary"
+                    aria-hidden="true"
+                  >
+                    <span class="material-symbols-outlined">mark_email_unread</span>
+                  </span>
+                  <div>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-0.5">
+                      Email updates
+                    </p>
+                    <p id="profile-newsletter" class="font-body-md text-body-md text-primary font-medium">—</p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="relative border-[2px] border-primary bg-[#FAF9F9] p-6 md:p-8 neo-shadow min-h-[140px]">
+              <div
+                class="absolute -top-3 left-4 bg-[#FAF9F9] px-2 border-[2px] border-primary font-label-caps text-label-caps uppercase"
+              >
+                Default shipping
+              </div>
+              <div class="mt-8 flex gap-4">
+                <span
+                  class="flex h-11 w-11 shrink-0 items-center justify-center border-[2px] border-primary bg-surface text-primary self-start"
+                  aria-hidden="true"
+                >
+                  <span class="material-symbols-outlined">location_on</span>
+                </span>
+                <div id="profile-address-block" class="min-w-0 flex-grow"></div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Side column -->
+          <aside class="lg:col-span-5 flex flex-col gap-6 md:gap-8">
+            <section class="relative border-[2px] border-primary bg-surface-container-lowest p-6 md:p-8 neo-shadow">
+              <div
+                class="absolute -top-3 left-4 bg-surface-container-lowest px-2 border-[2px] border-primary font-label-caps text-label-caps uppercase"
+              >
+                Registry status
+              </div>
+              <ul class="mt-8 space-y-6">
+                <li class="border-b-[2px] border-primary pb-5 last:border-0 last:pb-0">
+                  <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Terms</p>
+                  <p id="profile-terms" class="font-body-md text-body-md text-primary font-semibold">—</p>
+                </li>
+                <li>
+                  <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Last sign in</p>
+                  <p id="profile-last-login" class="font-body-md text-body-md text-primary tabular-nums">—</p>
+                </li>
+              </ul>
+            </section>
+
+            <div
+              class="border-[2px] border-dashed border-primary bg-surface p-5 md:p-6 font-body-md text-sm text-on-surface-variant leading-relaxed"
+            >
+              This is a demo profile. Data lives in your browser session and optional local registrations — not on a
+              secure server.
+            </div>
+
+            <button
+              type="button"
+              id="profile-sign-out"
+              class="inline-flex w-full items-center justify-center gap-2 font-label-caps text-label-caps uppercase py-3.5 px-4 min-h-[48px] border-[2px] border-primary bg-primary text-on-primary hover:bg-tertiary-fixed-dim hover:text-primary transition-colors cursor-pointer neo-shadow"
+            >
+              <span class="material-symbols-outlined text-[1.25rem]" aria-hidden="true">logout</span>
+              Sign out
+            </button>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="mt-auto border-t-[2px] border-primary bg-surface px-grid-margin py-6 text-center font-label-caps text-label-caps text-on-surface-variant"
+    >
+      © VAULT PH — ARCHITECTURAL STREETWEAR
+    </footer>
+    <script src="./vault-auth-store.js"></script>
+    <script src="./vault-account-ui.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-14T00:00:00.000Z",
+  "users": [
+    {
+      "id": "usr_001",
+      "fullName": "Mara Santos",
+      "email": "mara.santos@example.com",
+      "passwordDemo": "vault2026",
+      "phone": "+63 917 000 0001",
+      "role": "customer",
+      "newsletterOptIn": true,
+      "registryTermsAccepted": true,
+      "createdAt": "2026-01-10T10:30:00.000Z",
+      "lastLoginAt": null,
+      "addresses": [
+        {
+          "label": "default",
+          "line1": "12 Rizal Avenue",
+          "line2": "Floor 2",
+          "city": "Makati",
+          "region": "NCR",
+          "postalCode": "1200",
+          "country": "PH"
+        }
+      ]
+    },
+    {
+      "id": "usr_002",
+      "fullName": "Jordan Reyes",
+      "email": "jordan.reyes@example.com",
+      "passwordDemo": "vault2026",
+      "phone": "",
+      "role": "customer",
+      "newsletterOptIn": false,
+      "registryTermsAccepted": true,
+      "createdAt": "2026-02-22T14:00:00.000Z",
+      "lastLoginAt": "2026-05-01T09:15:00.000Z",
+      "addresses": []
+    },
+    {
+      "id": "usr_003",
+      "fullName": "Alex Chen",
+      "email": "alex.chen@example.com",
+      "passwordDemo": "vault2026",
+      "phone": "+63 918 555 0199",
+      "role": "customer",
+      "newsletterOptIn": true,
+      "registryTermsAccepted": true,
+      "createdAt": "2026-04-01T08:00:00.000Z",
+      "lastLoginAt": "2026-05-12T18:40:00.000Z",
+      "addresses": [
+        {
+          "label": "home",
+          "line1": "Unit 4B, The Grid Residences",
+          "city": "Quezon City",
+          "region": "NCR",
+          "postalCode": "1100",
+          "country": "PH"
+        }
+      ]
+    }
+  ]
+}

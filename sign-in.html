@@ -1,0 +1,116 @@
+<!-- Vault PH — Sign in -->
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vault PH — Sign in</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600&amp;family=Hanken+Grotesk:wght@400&amp;family=Space+Grotesk:wght@600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./logic.js"></script>
+  </head>
+  <body
+    class="vault-auth-page text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col selection:bg-tertiary-fixed-dim selection:text-primary"
+  >
+    <main
+      class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-grid-margin py-10 md:py-16 flex flex-col items-center justify-center"
+    >
+      <div
+        class="relative w-full max-w-md border-[2px] border-primary bg-[#FAF9F9] p-8 md:p-10 neo-shadow"
+      >
+        <div
+          class="absolute -top-3 left-4 bg-[#FAF9F9] px-2 border-[2px] border-primary font-label-caps text-label-caps uppercase"
+        >
+          Registry access
+        </div>
+        <h1
+          class="font-headline-md text-headline-md font-bold text-primary uppercase tracking-tight mb-1 mt-6"
+        >
+          Sign in
+        </h1>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-2 leading-relaxed">
+          Enter your credentials to access orders and saved pieces.
+        </p>
+        <p class="font-body-md text-xs text-on-surface-variant mb-8 leading-relaxed">
+          Demo users in <span class="font-mono">users.json</span> use password
+          <span class="font-mono font-semibold text-primary">vault2026</span>
+          (e.g. mara.santos@example.com).
+        </p>
+
+        <form class="flex flex-col gap-5" action="#" method="post" id="sign-in-form">
+          <div class="flex flex-col gap-1">
+            <label class="font-label-caps text-label-caps text-primary" for="signin-email"
+              >Email</label
+            >
+            <input
+              id="signin-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="font-label-caps text-label-caps text-primary" for="signin-password"
+              >Password</label
+            >
+            <input
+              id="signin-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              class="w-full border-[2px] border-primary bg-surface-container-lowest p-3 font-body-md text-body-md text-primary focus:outline-none focus:border-[4px] placeholder:text-on-surface-variant"
+              placeholder="••••••••"
+            />
+          </div>
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <label class="inline-flex items-center gap-2 cursor-pointer font-body-md text-sm text-on-surface-variant">
+              <input
+                type="checkbox"
+                class="h-5 w-5 border-[2px] border-primary bg-surface-container-lowest checked:bg-primary checked:border-primary focus:ring-0"
+              />
+              Remember me
+            </label>
+            <a
+              href="#"
+              class="font-label-caps text-label-caps uppercase text-primary underline decoration-1 underline-offset-2 hover:text-tertiary-fixed-dim"
+              >Forgot password</a
+            >
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-primary text-on-primary font-label-caps text-label-caps uppercase py-4 border-[2px] border-primary neo-shadow-hover hover:bg-tertiary-fixed-dim hover:text-primary transition-all min-h-[48px]"
+          >
+            Sign in
+          </button>
+        </form>
+
+        <p class="font-body-md text-body-md text-on-surface-variant mt-8 text-center leading-relaxed">
+          New to the registry?
+          <a
+            href="sign-up.html"
+            class="font-label-caps text-label-caps uppercase text-primary underline decoration-1 underline-offset-2 hover:text-tertiary-fixed-dim"
+            >Create an account</a
+          >
+        </p>
+      </div>
+    </main>
+
+    <footer
+      class="mt-auto border-t-[2px] border-primary bg-surface px-grid-margin py-6 text-center font-label-caps text-label-caps text-on-surface-variant"
+    >
+      © VAULT PH — ARCHITECTURAL STREETWEAR
+    </footer>
+    <script src="./vault-auth-store.js"></script>
+    <script src="./catalog-data.js" defer></script>
+    <script src="./vault-stack.js" defer></script>
+    <script src="./auth-forms.js" defer></script>
+  </body>
+</html>

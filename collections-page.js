@@ -10,13 +10,74 @@
     return;
   }
 
+  const productById = {};
+  PRODUCTS.forEach(function (p) {
+    productById[p.id] = p;
+  });
+
   const grid = document.getElementById("product-grid");
   const searchInput = document.getElementById("search");
   const sortSelect = document.getElementById("sort-by");
-  const countEl = document.getElementById("collections-result-count");
   const loadMoreBtn = document.getElementById("load-more-btn");
+  const backToTopEl = document.getElementById("shop-back-to-top");
+
+  /** When all matching products are visible (no LOAD MORE), scroll near page bottom shows #shop-back-to-top. */
+  const shopScrollUI = { hasMore: true, hasAnyMatch: true };
 
   let visibleCount = PAGE_SIZE;
+
+  function updateBackToTopFromScroll() {
+    if (!backToTopEl) return;
+    if (shopScrollUI.hasMore || !shopScrollUI.hasAnyMatch) {
+      backToTopEl.classList.add("hidden");
+      backToTopEl.classList.remove("flex");
+      return;
+    }
+    var doc = document.documentElement;
+    var y = window.scrollY || doc.scrollTop || 0;
+    var nearBottom = y + window.innerHeight >= doc.scrollHeight - 140;
+    backToTopEl.classList.toggle("hidden", !nearBottom);
+    backToTopEl.classList.toggle("flex", nearBottom);
+  }
+
+  var scrollQueued = false;
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (scrollQueued) return;
+      scrollQueued = true;
+      requestAnimationFrame(function () {
+        scrollQueued = false;
+        updateBackToTopFromScroll();
+      });
+    },
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "resize",
+    function () {
+      if (scrollQueued) return;
+      scrollQueued = true;
+      requestAnimationFrame(function () {
+        scrollQueued = false;
+        updateBackToTopFromScroll();
+      });
+    },
+    { passive: true }
+  );
+
+  if (backToTopEl) {
+    backToTopEl.addEventListener("click", function () {
+      var instant = false;
+      try {
+        instant = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      } catch (e) {
+        /* ignore */
+      }
+      window.scrollTo({ top: 0, behavior: instant ? "auto" : "smooth" });
+    });
+  }
 
   function escapeHtml(str) {
     return String(str)
@@ -124,10 +185,12 @@
     var img = escapeAttr(p.image);
     var href = escapeAttr(detailHref(p.id));
     return (
-      '<article class="product-card border-b-[2px] border-r-[2px] border-grid flex flex-col group relative cursor-pointer" data-href="' +
+      '<article class="product-card border-b-[2px] border-r-[2px] border-grid flex flex-col h-full min-h-0 group relative cursor-pointer" data-product-id="' +
+      escapeAttr(p.id) +
+      '" data-href="' +
       href +
       '" role="link" tabindex="0">' +
-      '<div class="aspect-[3/4] relative overflow-hidden bg-surface-container border-b-[2px] border-grid">' +
+      '<div class="aspect-[3/4] relative overflow-hidden bg-surface-container border-b-[2px] border-grid shrink-0">' +
       '<img alt="' +
       name +
       '" class="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-300" src="' +
@@ -135,15 +198,15 @@
       '" referrerpolicy="no-referrer" loading="lazy" decoding="async" />' +
       tagMarkup(p) +
       "</div>" +
-      '<div class="p-4 flex flex-col gap-1 bg-surface z-10">' +
-      '<h4 class="font-headline-md text-headline-md uppercase text-primary leading-none tracking-tighter group-hover:underline">' +
+      '<div class="flex flex-col flex-1 min-h-0 justify-between gap-2 px-4 sm:px-5 pt-3 pb-5 sm:pb-6 bg-surface z-10">' +
+      '<h4 class="font-headline-md text-headline-md uppercase text-primary leading-tight tracking-tighter group-hover:underline">' +
       name +
       "</h4>" +
-      '<div class="flex justify-between items-center mt-2">' +
+      '<div class="flex justify-between items-center gap-2">' +
       '<span class="font-label-caps text-label-caps text-tertiary-fixed-dim uppercase">' +
       price +
       "</span>" +
-      '<button type="button" class="product-add bg-primary text-on-primary font-label-caps text-label-caps px-3 py-1 uppercase border-[2px] border-primary hover:bg-surface hover:text-primary transition-colors">ADD</button>' +
+      '<button type="button" class="product-add shrink-0 bg-primary text-on-primary font-label-caps text-label-caps px-3 py-1 uppercase border-[2px] border-primary hover:bg-surface hover:text-primary transition-colors">BUY</button>' +
       "</div></div></article>"
     );
   }
@@ -170,8 +233,10 @@
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
         var card = btn.closest(".product-card");
-        var h = card && card.getAttribute("data-href");
-        if (h) window.location.href = h;
+        var id = card && card.getAttribute("data-product-id");
+        if (id && productById[id] && window.VaultStack && typeof window.VaultStack.add === "function") {
+          window.VaultStack.add(id);
+        }
       });
     });
   }
@@ -183,14 +248,12 @@
     var sorted = sortList(filtered);
     var slice = sorted.slice(0, visibleCount);
 
-    if (countEl) {
-      countEl.textContent =
-        sorted.length === 1 ? "1 PIECE" : sorted.length + " PIECES";
-    }
+    shopScrollUI.hasMore = sorted.length > visibleCount;
+    shopScrollUI.hasAnyMatch = sorted.length > 0;
 
     if (slice.length === 0) {
       grid.innerHTML =
-        '<div class="col-span-full border-b-[2px] border-r-[2px] border-grid p-stack-md text-center font-body-md text-body-md text-on-surface-variant">' +
+        '<div class="col-span-full border-b-[2px] border-r-[2px] border-grid px-4 py-stack-md sm:px-6 sm:py-stack-lg text-center font-body-md text-body-md text-on-surface-variant">' +
         "No pieces match your filters. Clear filters or search to see the full registry.</div>";
     } else {
       grid.innerHTML = slice.map(cardHtml).join("");
@@ -202,6 +265,8 @@
       loadMoreBtn.hidden = !hasMore;
       loadMoreBtn.disabled = !hasMore;
     }
+
+    updateBackToTopFromScroll();
   }
 
   function resetVisible() {

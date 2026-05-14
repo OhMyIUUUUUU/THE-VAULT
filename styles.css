@@ -163,3 +163,359 @@ body {
     will-change: auto;
   }
 }
+
+/* Global — pull stack (vault-stack.js) */
+.vault-stack-panel--sticky {
+  position: sticky;
+  top: 5.75rem;
+  align-self: flex-start;
+  max-height: calc(100vh - 6.5rem);
+}
+
+@media (max-width: 1023px) {
+  .vault-stack-panel--sticky {
+    position: static;
+    max-height: none;
+  }
+}
+
+.vault-stack-list {
+  max-height: min(55vh, 26rem);
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #efeded;
+}
+
+.vault-stack-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vault-stack-list::-webkit-scrollbar-track {
+  background: #efeded;
+  border-left: 1px solid #000;
+}
+
+.vault-stack-list::-webkit-scrollbar-thumb {
+  background: #000;
+  border: 1px solid #000;
+}
+
+.vault-stack-card {
+  box-sizing: border-box;
+}
+
+.vault-stack-card-title {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.vault-stack-card-line,
+.vault-stack-subtotal-amount {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.vault-stack-footer-summary {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+
+  .vault-stack-layout--collections .vault-stack-list,
+  .vault-stack-layout--detail .vault-stack-list {
+    max-height: none;
+    flex: 1 1 auto;
+  }
+}
+
+.vault-stack-qty-btn {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vault-stack-header {
+  box-sizing: border-box;
+}
+
+.vault-stack-empty {
+  min-height: 7.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .vault-stack-empty {
+    min-height: 8.5rem;
+  }
+}
+
+/* Collections shop — product shell */
+.vault-shop-products {
+  box-sizing: border-box;
+}
+
+/* Product detail — hero: smooth zoom toward torso (no jump; clip is animated via scale) */
+.detail-hero-zoom-btn {
+  cursor: zoom-in;
+}
+
+.detail-hero-zoom-btn[aria-pressed="true"] {
+  cursor: zoom-out;
+}
+
+.detail-hero-zoom-btn[aria-pressed="true"] .detail-hero-img {
+  transform: scale(1.58);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-hero-img {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Checkout — place order confirm + delivered animation */
+@keyframes checkout-rocket-fly {
+  0% {
+    transform: translate(calc(-45vw - 2rem), 22px);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  48% {
+    transform: translate(12px, -18px);
+  }
+
+  72% {
+    transform: translate(-6px, 6px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes checkout-rocket-hover {
+  0%,
+  100% {
+    transform: rotate(-28deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-22deg) translateY(-10px);
+  }
+}
+
+@keyframes checkout-package-land {
+  0% {
+    opacity: 0;
+    transform: translate(20px, -36px) scale(0.88);
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  65% {
+    transform: translate(0, 8px) scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes checkout-check-reveal {
+  0% {
+    transform: scale(0.15) rotate(-18deg);
+    opacity: 0;
+  }
+
+  55% {
+    transform: scale(1.1) rotate(4deg);
+    opacity: 1;
+  }
+
+  78% {
+    transform: scale(0.96) rotate(0);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.checkout-delivered-scene {
+  opacity: 0;
+  transform: scale(0.94) translateY(14px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.checkout-delivered-root--visible .checkout-delivered-scene {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.checkout-delivered-rocket-wrap {
+  opacity: 0;
+  transform: translate(calc(-45vw - 2rem), 22px);
+}
+
+.checkout-delivered-root--visible .checkout-delivered-rocket-wrap {
+  animation: checkout-rocket-fly 1.25s cubic-bezier(0.33, 1, 0.68, 1) 0.1s forwards;
+}
+
+.checkout-delivered-rocket {
+  display: block;
+  transform: rotate(-28deg);
+  transform-origin: 50% 55%;
+}
+
+.checkout-delivered-root--visible .checkout-delivered-rocket {
+  animation: checkout-rocket-hover 2.2s ease-in-out 1.3s infinite;
+}
+
+.checkout-delivered-package {
+  opacity: 0;
+}
+
+.checkout-delivered-root--visible .checkout-delivered-package {
+  animation: checkout-package-land 0.82s ease-out 0.88s forwards;
+}
+
+.checkout-delivered-check {
+  opacity: 0;
+  transform: scale(0.15);
+}
+
+.checkout-delivered-root--visible .checkout-delivered-check {
+  animation: checkout-check-reveal 0.62s cubic-bezier(0.34, 1.56, 0.64, 1) 1.05s forwards;
+}
+
+.checkout-delivered-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.42s ease,
+    transform 0.42s ease;
+}
+
+.checkout-delivered-fade--title {
+  transition-delay: 1.22s;
+}
+
+.checkout-delivered-fade--late {
+  transition-delay: 1.34s;
+}
+
+.checkout-delivered-fade--btn {
+  transition-delay: 1.46s;
+}
+
+.checkout-delivered-root--visible .checkout-delivered-fade {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .checkout-delivered-root--visible .checkout-delivered-rocket-wrap,
+  .checkout-delivered-root--visible .checkout-delivered-package,
+  .checkout-delivered-root--visible .checkout-delivered-check {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .checkout-delivered-scene,
+  .checkout-delivered-fade {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+
+  .checkout-delivered-root--visible .checkout-delivered-fade {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Sign in / Sign up — editorial runway backdrop */
+body.vault-auth-page {
+  position: relative;
+  isolation: isolate;
+  background-color: #e8e3dc;
+}
+
+body.vault-auth-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: #f4efe8;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      rgba(0, 0, 0, 0.028) 31px,
+      rgba(0, 0, 0, 0.028) 32px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 31px,
+      rgba(0, 0, 0, 0.028) 31px,
+      rgba(0, 0, 0, 0.028) 32px
+    ),
+    repeating-linear-gradient(
+      -18deg,
+      transparent,
+      transparent 52px,
+      rgba(0, 0, 0, 0.018) 52px,
+      rgba(0, 0, 0, 0.018) 53px
+    ),
+    radial-gradient(ellipse 90% 55% at 100% 0%, rgba(255, 222, 165, 0.55), transparent 58%),
+    radial-gradient(ellipse 70% 50% at 0% 100%, rgba(233, 193, 118, 0.32), transparent 55%),
+    linear-gradient(180deg, #faf9f9 0%, #ebe6df 52%, #e4dfd6 100%);
+}
+
+body.vault-auth-page::after {
+  content: "LOOKBOOK";
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  right: max(-3rem, -8vw);
+  bottom: 8vh;
+  font-family: "Space Grotesk", "Archivo Narrow", system-ui, sans-serif;
+  font-size: clamp(3.25rem, 11vw, 9.5rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.055;
+  transform: rotate(-12deg);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+body.vault-auth-page--signup::after {
+  content: "NEW SEASON";
+  right: auto;
+  left: max(-4rem, -10vw);
+  bottom: 12vh;
+  transform: rotate(10deg);
+}
+
+body.vault-auth-page > main,
+body.vault-auth-page > footer {
+  position: relative;
+  z-index: 1;
+}
